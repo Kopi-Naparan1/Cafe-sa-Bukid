@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -17,41 +17,69 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Close menu on Escape key
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === "Escape") setIsOpen(false);
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleKeyDown]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-dark bg-background/95 text-dark shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] backdrop-blur">
+    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-dark/20 bg-background/95 text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
-        <Link href="/" className="group inline-flex items-center gap-3 rounded-full">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="group inline-flex items-center gap-2.5 rounded-xl p-1 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
           <Image
-            className="rounded-full ring-2 ring-dark transition-all group-hover:ring-dark/70"
-            width={52}
-            height={52}
+            className="rounded-full ring-2 ring-dark/80 transition-all group-hover:ring-dark/50"
+            width={44}
+            height={44}
             loading="eager"
             src="/CafesaBukidLogo.png"
             alt="Cafe sa Bukid Logo"
           />
-          <span>
-            <span className="block font-heading text-sm tracking-tight sm:text-base">
+          <span className="leading-tight">
+            <span className="block font-heading text-sm font-semibold tracking-tight sm:text-base">
               Cafe sa Bukid
             </span>
-            <span className="block text-xs tracking-tight text-dark/60 sm:text-sm">
+            <span className="block text-xs tracking-tight text-dark/55 sm:text-sm">
               Malaybalay, Bukidnon
             </span>
           </span>
         </Link>
 
-        <nav className="hidden md:block" aria-label="Primary">
-          <ul className="flex items-center gap-2">
+        {/* Desktop nav */}
+        <nav className="hidden md:block" aria-label="Primary navigation">
+          <ul className="flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
-
               return (
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className={`inline-flex rounded-xl border-2 px-4 py-2 transition-all ${
+                    aria-current={isActive ? "page" : undefined}
+                    className={`inline-flex rounded-xl border-2 px-4 py-1.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive
-                        ? "border-primary bg-primary/10"
-                        : "border-transparent hover:border-primary/30 hover:bg-primary/5"
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-transparent text-dark/80 hover:border-primary/25 hover:bg-primary/5 hover:text-dark"
                     }`}
                   >
                     {item.label}
@@ -62,47 +90,57 @@ export default function Header() {
           </ul>
         </nav>
 
+        {/* Mobile menu toggle */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="cursor-pointer rounded-full p-2 ring-2 ring-dark transition-all duration-150 hover:ring-dark/70 md:hidden"
+          className="cursor-pointer rounded-full p-2 ring-2 ring-dark/70 transition-all duration-150 hover:bg-dark/5 hover:ring-dark/50 focus-visible:outline-none focus-visible:ring-primary md:hidden"
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? (
+            <X size={18} strokeWidth={2.5} />
+          ) : (
+            <Menu size={18} strokeWidth={2.5} />
+          )}
         </button>
       </div>
 
-      {isOpen && (
-        <div
-          id="mobile-navigation"
-          className="border-t border-dark/15 bg-background md:hidden"
+      {/* Mobile nav drawer */}
+      <div
+        id="mobile-navigation"
+        aria-hidden={!isOpen}
+        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav
+          className="mx-auto w-full max-w-6xl border-t border-dark/10 px-4 py-3"
+          aria-label="Mobile navigation"
         >
-          <nav className="mx-auto w-full max-w-6xl px-4 py-4" aria-label="Mobile">
-            <ul className="flex flex-col gap-3">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href;
-
-                return (
-                  <li key={item.label}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block rounded-xl border-2 px-4 py-3 transition-all ${
-                        isActive
-                          ? "border-primary bg-primary/10"
-                          : "border-transparent hover:border-primary/30 hover:bg-primary/5"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-      )}
+          <ul className="flex flex-col gap-1.5">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`flex items-center rounded-xl border-2 px-4 py-2.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                      isActive
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-transparent text-dark/80 hover:border-primary/25 hover:bg-primary/5 hover:text-dark"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
