@@ -66,3 +66,19 @@ html {
 body {
   @apply bg-background text-dark;
 }
+
+@keyframes floatX {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(10%);
+  } /* slides right by 10% of container */
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide-x {
+  animation: floatX 10s ease-in-out infinite;
+}

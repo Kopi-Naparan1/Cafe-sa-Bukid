@@ -1,4 +1,4 @@
-// import Hero from "@/components/sections/Hero";
+import Hero from "@/components/sections/Hero";
 // import AboutPreview from "@/components/sections/AboutPreview";
 // import BestSellers from "@/components/sections/BestSellers";
 // import MenuPreview from "@/components/sections/MenuPreview";
@@ -9,7 +9,7 @@
 export default function Home() {
   return (
     <div className="pb-6 sm:pb-8">
-      {/* <Hero /> */}
+      <Hero />
       {/* <AboutPreview />
       <BestSellers />
       <MenuPreview />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
@@ -15,76 +16,93 @@ const navItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
   return (
-    <div className="shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] text-dark justify-between min-h-12.5 px-4 md:px-6 items-center border-dark border-b-2 rounded-b-2xl lg:px-8 flex flex-row py-2 w-full h-6">
-      <div className="flex flex-row">
-        {" "}
-        <Link
-          key={navItems[0].label}
-          href={navItems[0].href}
-          className=" group inline-flex items-center justify-center  rounded-full"
-        >
+    <header className="sticky top-0 z-50 border-b-2 border-dark bg-background/95 text-dark shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
+        <Link href="/" className="group inline-flex items-center gap-3 rounded-full">
           <Image
-            className="ring-2  ring-dark group-hover:ring-dark/70 rounded-full transition-all"
-            width={50}
-            height={50}
+            className="rounded-full ring-2 ring-dark transition-all group-hover:ring-dark/70"
+            width={52}
+            height={52}
             loading="eager"
             src="/CafesaBukidLogo.png"
             alt="Cafe sa Bukid Logo"
           />
+          <span>
+            <span className="block font-heading text-sm tracking-tight sm:text-base">
+              Cafe sa Bukid
+            </span>
+            <span className="block text-xs tracking-tight text-dark/60 sm:text-sm">
+              Malaybalay, Bukidnon
+            </span>
+          </span>
         </Link>
-        <span className="pl-2  ">
-          <h3 className="text-sm tracking-tight">Cafe sa Bukid</h3>{" "}
-          <p className="text-dark/50 text-xs  tracking-tight">
-            Malaybalay, Bukidnon
-          </p>
-        </span>
-      </div>
 
-      <nav className=" md:block hidden">
-        <ul className="flex gap-4 ">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`p-2 rounded-xl border-2 transition-all ${isActive ? "border-primary" : "border-transparent hover:border-primary/30"}`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </ul>
-      </nav>
-
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden ring-2  ring-dark hover:ring-dark/70 rounded-full duration-150 transition-all p-2 cursor-pointer"
-      >
-        {isOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
-
-      {isOpen && (
-        <div className="absolute top-16 left-0 w-full  border-dark border-b-1 rounded-b-2xl bg-background shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] md:hidden transition-all duration-150">
-          {" "}
-          <ul className="flex flex-col gap-4 py-4 ">
+        <nav className="hidden md:block" aria-label="Primary">
+          <ul className="flex items-center gap-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
+
               return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsOpen(!isOpen)}
-                  className={`mx-4  p-2 rounded-xl border-2 transition-all ${isActive ? "border-primary" : "border-transparent hover:border-primary/30"}`}
-                >
-                  {item.label}
-                </Link>
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`inline-flex rounded-xl border-2 px-4 py-2 transition-all ${
+                      isActive
+                        ? "border-primary bg-primary/10"
+                        : "border-transparent hover:border-primary/30 hover:bg-primary/5"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
               );
             })}
           </ul>
+        </nav>
+
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          className="cursor-pointer rounded-full p-2 ring-2 ring-dark transition-all duration-150 hover:ring-dark/70 md:hidden"
+        >
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div
+          id="mobile-navigation"
+          className="border-t border-dark/15 bg-background md:hidden"
+        >
+          <nav className="mx-auto w-full max-w-6xl px-4 py-4" aria-label="Mobile">
+            <ul className="flex flex-col gap-3">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+
+                return (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block rounded-xl border-2 px-4 py-3 transition-all ${
+                        isActive
+                          ? "border-primary bg-primary/10"
+                          : "border-transparent hover:border-primary/30 hover:bg-primary/5"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
       )}
-    </div>
+    </header>
   );
 }
