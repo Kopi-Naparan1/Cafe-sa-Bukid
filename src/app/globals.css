@@ -4,17 +4,59 @@
   --font-body: "Poppins", sans-serif;
   --font-heading: "Playfair Display", serif;
 
-  --color-background: #ffffff;
-  --color-surface: #f9fafb;
-  --color-muted: #6b7280;
-  --color-dark: #111827;
-  --color-primary: #4a9c3e;
-  --color-secondary: #6b4e3d;
-  --color-accent: #ffcc33;
+  --color-background: #f6f1e8; /* warm paper tone */
+  --color-surface: #ffffff; /* keep clean contrast */
+  --color-muted: #7a6f66;
+  --color-dark: #2b2622; /* softer than pure black */
 
-  --spacing-container: 1.5rem;
-  --spacing-section: 6rem;
-  --spacing-contact: 1200px;
+  /* PRIMARY → olive wood green */
+  --color-primary: #5c7a4f;
+  --color-primary-light: #739766;
+  --color-primary-dark: #445c3a;
+
+  /* SECONDARY → richer wood brown */
+  --color-secondary: #7a5a3c;
+  --color-secondary-light: #9a7452;
+  --color-secondary-dark: #5c432d;
+
+  /* ACCENT → coffee gold (less aggressive) */
+  --color-accent: #c89b3c;
+  --color-accent-light: #d7b25c;
+  --color-accent-dark: #a87e2f;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 html {

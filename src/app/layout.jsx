@@ -1,5 +1,6 @@
 import "./globals.css";
 import Header from "@/components/ui/Header";
+import Footer from "@/components/ui/Footer";
 
 export const metadata = {
   title: "Cafe sa Bukidnon",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body className="flex min-h-screen max-w-full  flex-col">
         <Header />
         <main className="flex-1">{children}</main>
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -4,107 +4,87 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/menu", label: "Menu" },
-  { href: "/contact", label: "Contact" },
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/menu" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
   return (
-    <header className="relative z-50 mb-8 rounded-card border border-white/70 bg-white/80 px-4 py-3 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] backdrop-blur-md sm:px-container-md">
-      <div className="flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-primary/20">
-            <Image
-              src="/CafesaBukidLogo.jpg"
-              alt="Cafe sa Bukid logo"
-              fill
-              sizes="50px"
-              className="object-cover"
-              priority
-            />
-          </span>
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-heading text-lg text-dark">
-              Cafe sa Bukid
-            </span>
-            <span className="text-xs uppercase tracking-[0.28em] text-muted">
-              Malaybalay, Bukidnon
-            </span>
-          </span>
+    <div className="shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] text-dark justify-between min-h-12.5 px-4 md:px-6 items-center border-dark border-b-2 rounded-b-2xl lg:px-8 flex flex-row py-2 w-full h-6">
+      <div className="flex flex-row">
+        {" "}
+        <Link
+          key={navItems[0].label}
+          href={navItems[0].href}
+          className=" group inline-flex items-center justify-center  rounded-full"
+        >
+          <Image
+            className="ring-2  ring-dark group-hover:ring-dark/70 rounded-full transition-all"
+            width={50}
+            height={50}
+            loading="eager"
+            src="/CafesaBukidLogo.png"
+            alt="Cafe sa Bukid Logo"
+          />
         </Link>
+        <span className="pl-2  ">
+          <h3 className="text-sm tracking-tight">Cafe sa Bukid</h3>{" "}
+          <p className="text-dark/50 text-xs  tracking-tight">
+            Malaybalay, Bukidnon
+          </p>
+        </span>
+      </div>
 
-        <button
-          type="button"
-          onClick={() => setIsMenuOpen((current) => !current)}
-          aria-expanded={isMenuOpen}
-          aria-controls="primary-navigation"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="inline-flex items-center justify-center rounded-full border border-primary/15 bg-surface p-3 text-dark transition hover:border-primary/30 hover:bg-primary/50 hover:text-dark focus:outline-none focus:ring-2 focus:ring-primary sm:hidden"
-        >
-          <span className="relative block h-5 w-5">
-            <Menu
-              aria-hidden="true"
-              className={`absolute inset-0 h-5 w-5 transition-all duration-150 motion-reduce:transition-none ${
-                isMenuOpen ? "scale-75 opacity-0" : "scale-100 opacity-100"
-              }`}
-            />
-            <X
-              aria-hidden="true"
-              className={`absolute inset-0 h-5 w-5 transition-all duration-150 motion-reduce:transition-none ${
-                isMenuOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
-              }`}
-            />
-          </span>
-        </button>
+      <nav className=" md:block hidden">
+        <ul className="flex gap-4 ">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`p-2 rounded-xl border-2 transition-all ${isActive ? "border-primary" : "border-transparent hover:border-primary/30"}`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </ul>
+      </nav>
 
-        <nav
-          id="primary-navigation"
-          aria-label="Primary"
-          className={`absolute left-0 top-full mt-3 w-full rounded-card border border-white/70 bg-white/95 p-3 shadow-elevated backdrop-blur-md sm:static sm:mt-0 sm:w-auto sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none ${
-            isMenuOpen ? "block" : "hidden"
-          } sm:block`}
-        >
-          {/* The mobile menu uses the same nav links as desktop, just stacked vertically. */}
-          <ul className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-2">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden ring-2  ring-dark hover:ring-dark/70 rounded-full duration-150 transition-all p-2 cursor-pointer"
+      >
+        {isOpen ? <X size={20} /> : <Menu size={20} />}
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-16 left-0 w-full  border-dark border-b-1 rounded-b-2xl bg-background shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] md:hidden transition-all duration-150">
+          {" "}
+          <ul className="flex flex-col gap-4 py-4 ">
             {navItems.map((item) => {
-              // Keep the current route highlighted, including nested pages like /about/team.
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname?.startsWith(item.href);
-
+              const isActive = pathname === item.href;
               return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`block rounded-full px-4 py-2 text-sm font-medium transition ${
-                      isActive
-                        ? "bg-primary text-white shadow-sm"
-                        : "text-dark hover:bg-primary/50 hover:text-dark/80 focus-visible:bg-primary/50 focus-visible:text-dark/80"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(!isOpen)}
+                  className={`mx-4  p-2 rounded-xl border-2 transition-all ${isActive ? "border-primary" : "border-transparent hover:border-primary/30"}`}
+                >
+                  {item.label}
+                </Link>
               );
             })}
           </ul>
-        </nav>
-      </div>
-    </header>
+        </div>
+      )}
+    </div>
   );
 }

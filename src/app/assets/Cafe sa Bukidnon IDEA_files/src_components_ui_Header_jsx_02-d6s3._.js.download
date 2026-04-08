@@ -1,0 +1,349 @@
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/src/components/ui/Header.jsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Header
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+"use client";
+;
+;
+;
+;
+;
+;
+const navItems = [
+    {
+        href: "/",
+        label: "Home"
+    },
+    {
+        href: "/about",
+        label: "About"
+    },
+    {
+        href: "/menu",
+        label: "Menu"
+    },
+    {
+        href: "/contact",
+        label: "Contact"
+    }
+];
+const headerClassName = "relative z-50 mb-6 border-b border-primary/20 bg-background/95 shadow-card backdrop-blur-md";
+const brandClassName = "flex min-w-0 flex-1 items-center gap-3";
+const brandMarkClassName = "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-primary/20 transition-all duration-150 hover:ring-primary focus-visible:ring-primary/50";
+const brandTextClassName = "flex min-w-0 flex-1 flex-col leading-tight";
+const brandTitleClassName = "truncate font-heading text-base text-dark sm:text-lg";
+const brandSubtitleClassName = "truncate text-[0.65rem] uppercase tracking-[0.18em] text-muted sm:text-xs sm:tracking-[0.28em]";
+const toggleButtonClassName = "inline-flex items-center justify-center rounded-full border border-primary/15 bg-background p-3 text-dark transition hover:border-primary/30 hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary sm:hidden";
+const toggleIconClassName = "absolute inset-0 h-5 w-5 transition-all duration-150 motion-reduce:transition-none";
+const navClassName = "absolute left-4 right-4 top-full mt-3 rounded-card border border-primary/10 bg-background/95 p-3 shadow-elevated backdrop-blur-md sm:static sm:left-auto sm:right-auto sm:mt-0 sm:w-auto sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none";
+const navListClassName = "flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-end sm:gap-2";
+const navLinkClassName = "block rounded-full px-4 py-2 text-sm font-medium transition focus-visible:bg-primary/10 focus-visible:text-dark";
+function Header() {
+    _s();
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(28);
+    if ($[0] !== "4e72e9c2e36c9e76e14fc1bc13fb80badf4165eb09644f9b444b6583f75e1d55") {
+        for(let $i = 0; $i < 28; $i += 1){
+            $[$i] = Symbol.for("react.memo_cache_sentinel");
+        }
+        $[0] = "4e72e9c2e36c9e76e14fc1bc13fb80badf4165eb09644f9b444b6583f75e1d55";
+    }
+    const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
+    const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    let t0;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = ({
+            "Header[useEffect()]": ()=>{
+                setIsMenuOpen(false);
+            }
+        })["Header[useEffect()]"];
+        $[1] = t0;
+    } else {
+        t0 = $[1];
+    }
+    let t1;
+    if ($[2] !== pathname) {
+        t1 = [
+            pathname
+        ];
+        $[2] = pathname;
+        $[3] = t1;
+    } else {
+        t1 = $[3];
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(t0, t1);
+    let t2;
+    if ($[4] === Symbol.for("react.memo_cache_sentinel")) {
+        t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: brandMarkClassName,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                src: "/CafesaBukidLogo.png",
+                alt: "Cafe sa Bukid logo",
+                fill: true,
+                className: "object-cover",
+                priority: true
+            }, void 0, false, {
+                fileName: "[project]/src/components/ui/Header.jsx",
+                lineNumber: 65,
+                columnNumber: 47
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 65,
+            columnNumber: 10
+        }, this);
+        $[4] = t2;
+    } else {
+        t2 = $[4];
+    }
+    let t3;
+    if ($[5] === Symbol.for("react.memo_cache_sentinel")) {
+        t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            href: "/",
+            className: brandClassName,
+            children: [
+                t2,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: brandTextClassName,
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: brandTitleClassName,
+                            children: "Cafe sa Bukid"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Header.jsx",
+                            lineNumber: 72,
+                            columnNumber: 93
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: brandSubtitleClassName,
+                            children: "Malaybalay, Bukidnon"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Header.jsx",
+                            lineNumber: 72,
+                            columnNumber: 151
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/Header.jsx",
+                    lineNumber: 72,
+                    columnNumber: 56
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 72,
+            columnNumber: 10
+        }, this);
+        $[5] = t3;
+    } else {
+        t3 = $[5];
+    }
+    let t4;
+    if ($[6] === Symbol.for("react.memo_cache_sentinel")) {
+        t4 = ({
+            "Header[<button>.onClick]": ()=>setIsMenuOpen(_HeaderButtonOnClickSetIsMenuOpen)
+        })["Header[<button>.onClick]"];
+        $[6] = t4;
+    } else {
+        t4 = $[6];
+    }
+    const t5 = isMenuOpen ? "Close menu" : "Open menu";
+    const t6 = `${toggleIconClassName} ${isMenuOpen ? "scale-75 opacity-0" : "scale-100 opacity-100"}`;
+    let t7;
+    if ($[7] !== t6) {
+        t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+            "aria-hidden": "true",
+            className: t6
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 90,
+            columnNumber: 10
+        }, this);
+        $[7] = t6;
+        $[8] = t7;
+    } else {
+        t7 = $[8];
+    }
+    const t8 = `${toggleIconClassName} ${isMenuOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"}`;
+    let t9;
+    if ($[9] !== t8) {
+        t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+            "aria-hidden": "true",
+            className: t8
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 99,
+            columnNumber: 10
+        }, this);
+        $[9] = t8;
+        $[10] = t9;
+    } else {
+        t9 = $[10];
+    }
+    let t10;
+    if ($[11] !== t7 || $[12] !== t9) {
+        t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+            className: "relative block h-5 w-5",
+            children: [
+                t7,
+                t9
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 107,
+            columnNumber: 11
+        }, this);
+        $[11] = t7;
+        $[12] = t9;
+        $[13] = t10;
+    } else {
+        t10 = $[13];
+    }
+    let t11;
+    if ($[14] !== isMenuOpen || $[15] !== t10 || $[16] !== t5) {
+        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+            type: "button",
+            onClick: t4,
+            "aria-expanded": isMenuOpen,
+            "aria-controls": "primary-navigation",
+            "aria-haspopup": "menu",
+            "aria-label": t5,
+            className: toggleButtonClassName,
+            children: t10
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 116,
+            columnNumber: 11
+        }, this);
+        $[14] = isMenuOpen;
+        $[15] = t10;
+        $[16] = t5;
+        $[17] = t11;
+    } else {
+        t11 = $[17];
+    }
+    const t12 = `${navClassName} ${isMenuOpen ? "block" : "hidden"} sm:block`;
+    let t13;
+    if ($[18] !== pathname) {
+        t13 = navItems.map({
+            "Header[navItems.map()]": (item)=>{
+                const isActive = item.href === "/" ? pathname === "/" : pathname?.startsWith(item.href);
+                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        href: item.href,
+                        onClick: {
+                            "Header[navItems.map() > <Link>.onClick]": ()=>setIsMenuOpen(false)
+                        }["Header[navItems.map() > <Link>.onClick]"],
+                        "aria-current": isActive ? "page" : undefined,
+                        className: `${navLinkClassName} ${isActive ? "bg-primary text-background shadow-sm" : "text-dark hover:bg-primary/10 hover:text-dark"}`,
+                        children: item.label
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/Header.jsx",
+                        lineNumber: 130,
+                        columnNumber: 36
+                    }, this)
+                }, item.href, false, {
+                    fileName: "[project]/src/components/ui/Header.jsx",
+                    lineNumber: 130,
+                    columnNumber: 16
+                }, this);
+            }
+        }["Header[navItems.map()]"]);
+        $[18] = pathname;
+        $[19] = t13;
+    } else {
+        t13 = $[19];
+    }
+    let t14;
+    if ($[20] !== t13) {
+        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+            className: navListClassName,
+            children: t13
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 142,
+            columnNumber: 11
+        }, this);
+        $[20] = t13;
+        $[21] = t14;
+    } else {
+        t14 = $[21];
+    }
+    let t15;
+    if ($[22] !== t12 || $[23] !== t14) {
+        t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+            id: "primary-navigation",
+            "aria-label": "Primary",
+            className: t12,
+            children: t14
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 150,
+            columnNumber: 11
+        }, this);
+        $[22] = t12;
+        $[23] = t14;
+        $[24] = t15;
+    } else {
+        t15 = $[24];
+    }
+    let t16;
+    if ($[25] !== t11 || $[26] !== t15) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+            className: headerClassName,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "mx-auto flex w-full max-w-content items-center justify-between gap-3 px-4 py-3 sm:px-container-md",
+                children: [
+                    t3,
+                    t11,
+                    t15
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ui/Header.jsx",
+                lineNumber: 159,
+                columnNumber: 47
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Header.jsx",
+            lineNumber: 159,
+            columnNumber: 11
+        }, this);
+        $[25] = t11;
+        $[26] = t15;
+        $[27] = t16;
+    } else {
+        t16 = $[27];
+    }
+    return t16;
+}
+_s(Header, "G/oCNHPY0yrYKyrA5YXyZI2tyXY=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"]
+    ];
+});
+_c = Header;
+function _HeaderButtonOnClickSetIsMenuOpen(current) {
+    return !current;
+}
+var _c;
+__turbopack_context__.k.register(_c, "Header");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+]);
+
+//# sourceMappingURL=src_components_ui_Header_jsx_02-d6s3._.js.map
