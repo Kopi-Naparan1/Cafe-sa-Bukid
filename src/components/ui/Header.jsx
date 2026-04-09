@@ -41,7 +41,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-dark/20 bg-background/95 text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-primary/80 bg-secondary-light/40 text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
         {/* Logo */}
         <Link
@@ -111,7 +111,7 @@ export default function Header() {
         id="mobile-navigation"
         aria-hidden={!isOpen}
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-96 opacity-100  " : "max-h-0 opacity-0"
         }`}
       >
         <nav

@@ -17,7 +17,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="font-body bg-background text-dark">
+    <html lang="en" className="font-body bg-background text-dark custom-scroll">
       <body className="flex min-h-screen max-w-full flex-col">
         <Header />
         <main className="flex-1">{children}</main>

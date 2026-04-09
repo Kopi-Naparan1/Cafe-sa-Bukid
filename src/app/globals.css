@@ -82,3 +82,42 @@ body {
 .animate-slide-x {
   animation: floatX 10s ease-in-out infinite;
 }
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+/* Width + track */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; /* for horizontal scrollbars */
+}
+
+/* The track (background) */
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 999px;
+}
+
+/* The thumb (the draggable part) */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-primary, #4a7c59);
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary, #3a6347);
+}

@@ -10,7 +10,7 @@ export default function Hero() {
       grid min-h-[calc(100vh-5rem)] items-center
       gap-10 py-10
       grid-cols-1
-      sm:px-6
+      px-6
       md:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] md:gap-12 md:py-16 md:px-10
       lg:gap-16 lg:py-20 lg:px-16
     "
