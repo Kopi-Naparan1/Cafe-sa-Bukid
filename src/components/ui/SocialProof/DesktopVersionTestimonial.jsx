@@ -23,7 +23,7 @@ export default function DesktopVersionTestimonial({
             </div>
 
             {/* FLIP AREA */}
-            <div className="relative" style={{ height: "280px" }}>
+            <div className="relative" style={{ height: "350px" }}>
               <div
                 className={`
           absolute inset-0

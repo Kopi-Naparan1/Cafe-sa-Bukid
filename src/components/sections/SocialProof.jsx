@@ -14,7 +14,7 @@ import Testimonial from "../ui/SocialProof/Testimonials";
 import Strip from "../ui/SocialProof/Strip";
 
 const trustMetricItems = [
-  { icon: Users, metric: "61K+", label: "Followers" },
+  { icon: Users, metric: "61K+", label: "Facebook Followers" },
   { icon: ThumbsUp, metric: "7,474", label: "Recommendations" },
   { icon: Star, metric: "4.6", label: "Google Maps Rating" },
 ];
@@ -69,7 +69,7 @@ export default function SocialProof() {
   );
 
   return (
-    <Section className="min-h-[calc(100vh-5rem)] flex flex-col bg-secondary-light/30 rounded-b-2xl overflow-hidden">
+    <Section className="min-h-[50vh]  flex flex-col bg-secondary-light/30 rounded-2xl overflow-hidden max-h-[80vh] md:max-h-full">
       <span className="mb-3 text-xs font-medium uppercase tracking-[.16em] text-primary/60 md:mb-4">
         Loved by Locals
       </span>

@@ -8,14 +8,14 @@ export default function MobileVersionTestimonial({
 }) {
   return (
     <div className="relative md:hidden">
-      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 px-4 custom-scroll ">
         {testimonials.map((item, index) => {
           const isFlipped = flippedIndex === index;
 
           return (
             <div
               key={item.name}
-              className="w-[72vw] max-w-70 snap-center shrink-0 perspective-[1000px] transition-transform duration-150 custom-scroll"
+              className="w-[72vw] max-w-70 snap-center shrink-0 perspective-[1000px] transition-transform duration-150 "
               // ← no onClick here anymore
             >
               {/* STATIC TITLE */}
@@ -24,7 +24,7 @@ export default function MobileVersionTestimonial({
               </div>
 
               {/* FLIP AREA */}
-              <div className="relative" style={{ height: "260px" }}>
+              <div className="relative" style={{ height: "300px" }}>
                 <div
                   className={`
         absolute inset-0
