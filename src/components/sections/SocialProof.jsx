@@ -69,7 +69,7 @@ export default function SocialProof() {
   );
 
   return (
-    <Section className="min-h-[50vh]  flex flex-col bg-secondary-light/30 rounded-2xl overflow-hidden max-h-[80vh] md:max-h-full">
+    <Section className="min-h-[70vh]  flex flex-col bg-secondary-light/30 rounded-2xl overflow-hidden max-h-full">
       <span className="mb-3 text-xs font-medium uppercase tracking-[.16em] text-primary/60 md:mb-4">
         Loved by Locals
       </span>
