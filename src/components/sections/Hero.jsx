@@ -11,12 +11,13 @@ export default function Hero() {
       gap-10 py-10
       grid-cols-1
       px-6
+   
       md:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] md:gap-12 md:py-16 md:px-10
       lg:gap-16 lg:py-20 lg:px-16
     "
     >
       {/* Text content */}
-      <div className="flex max-w-2xl flex-col justify-center px-1 sm:px-0">
+      <div className="flex max-w-2xl flex-col items-center  text-center px-1 sm:px-0">
         <span
           className="
           mb-3 text-xs font-medium uppercase tracking-[.16em]
@@ -28,7 +29,7 @@ export default function Hero() {
 
         <h1
           className="
-          font-heading font-extrabold tracking-tight text-left
+          font-heading font-extrabold tracking-tight
           text-[clamp(2.2rem,6vw,4.5rem)] leading-[1.08]
         "
         >
@@ -37,9 +38,9 @@ export default function Hero() {
 
         <p
           className="
-          mt-4 max-w-md text-left leading-relaxed
+          mt-4 max-w-md t leading-relaxed
           text-[clamp(.95rem,2vw,1.2rem)] text-dark/65
-          md:mt-5
+          md:mt-5 
         "
         >
           Great food. BUKID experience! — where every meal tastes like it was
@@ -48,15 +49,18 @@ export default function Hero() {
 
         <div
           className="
-          mt-8 flex flex-col gap-3 text-center
-          sm:flex-row sm:gap-4
+          mt-8 flex flex-col  
+          md:flex-row gap-4
           md:mt-12 md:justify-start
+          flex-1 w-[40vw] md:flex-none
+
         "
         >
           <Link
             href="/menu"
             className="
-              rounded-full bg-accent px-7 py-3
+              rounded-full bg-accent  py-3 flex flex-1 md:flex-none items-center justify-center
+              text-center
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium text-background
               transition-all duration-150 hover:bg-accent/80 hover:-translate-y-px
               md:px-10
@@ -66,8 +70,8 @@ export default function Hero() {
           </Link>
           <Link
             href="/contact"
-            className="
-              rounded-full border-2 border-primary px-7 py-3
+            className="   text-center items-center justify-center
+              rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
               transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px
               md:px-10
@@ -80,10 +84,11 @@ export default function Hero() {
 
       {/* Hero image */}
       <div
-        className="
-        relative w-full overflow-hidden rounded-2xl
-        aspect-[4/3]
-        sm:aspect-[16/9]
+        className=" 
+
+        relative md:w-[40vw] w-[clamp(280px,80vw,520px)] mx-auto overflow-hidden rounded-2xl
+        aspect-4/3
+      
         md:aspect-auto md:self-stretch md:rounded-3xl
         ring-4 ring-primary/30
       "

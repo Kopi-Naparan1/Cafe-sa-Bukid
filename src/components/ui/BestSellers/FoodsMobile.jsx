@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Star } from "lucide-react";
 
 export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
   return (
@@ -10,26 +9,31 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
         return (
           <div
             key={item.id}
-            className="perspective-[1000px] transition-all duration-300 flex-1 hover:-translate-y-1 group  max-w-80"
+            className="perspective-[1000px] transition-transform duration-300 flex-1 hover:-translate-y-1  w-[clamp(280px,80vw,420px)] mx-auto"
             // ← no onClick on card
           >
             {/* STATIC TITLE */}
             <div className="relative flex items-center justify-between bg-secondary px-3 py-3  rounded-t-xl ring-1 ring-secondary/90">
               {/* Name */}
-              <h3 className="text-sm font-semibold leading-tight   text-background/80 truncate">
+              <h3 className="text-sm font-semibold leading-tight justify-center   text-background/80 truncate">
                 {item.name}
               </h3>
 
               {/* Price */}
-              <span className="absolute right-1 -top-3 text-xs font-bold text-secondary  tracking-wide bg-background/90 group-hover:bg-background/95 transition-background duration-150 ease-in-out px-2 py-1 rounded-t-full rounded-br-full ring-2 ring-dark/90">
+              <span className="absolute right-2 -top-3 text-xs font-bold text-secondary  tracking-wide bg-background/90 group-hover:bg-background/95 transition-background duration-150 ease-in-out px-2 py-1 rounded-t-full rounded-br-full ring-2 ring-dark/90">
                 ₱ {item.price}
               </span>
             </div>
 
             {/* FLIP AREA */}
-            <div className="relative" style={{ height: "280px" }}>
+            <div
+              className="relative  mx-auto"
+              style={{
+                height: "clamp(30vh, 35vh, 40vh)",
+              }}
+            >
               <div
-                className={`
+                className={`will-change-transform
           absolute inset-0
           transition-transform duration-500
           transform-3d

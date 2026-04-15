@@ -3,14 +3,14 @@ import { Star } from "lucide-react";
 
 export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
   return (
-    <div className="hidden md:flex md:gap-4 items-stretch">
+    <div className="hidden md:flex md:gap-4  ">
       {foods.map((item, index) => {
         const isFlipped = flippedIndex !== index;
 
         return (
           <div
             key={item.id}
-            className="flex-1 perspective-[1000px] transition-all duration-300 hover:-translate-y-1 group "
+            className=" perspective-[1000px] transition-all duration-300 hover:-translate-y-1 group max-w-full w-full "
             // ← no onClick on card
           >
             {/* STATIC TITLE */}
@@ -27,7 +27,15 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
             </div>
 
             {/* FLIP AREA */}
-            <div className="relative" style={{ height: "350px" }}>
+            <div
+              className="relative"
+              style={{
+                height: "40vh",
+                width: "30vw",
+                minHeight: "35vh",
+                maxHeight: "50vh",
+              }}
+            >
               <div
                 className={`
           absolute inset-0

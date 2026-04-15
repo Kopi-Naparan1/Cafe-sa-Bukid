@@ -1,24 +1,24 @@
 import Hero from "@/components/sections/Hero";
 import SocialProof from "@/components/sections/SocialProof";
 import BestSellers from "@/components/sections/BestSellers";
-// import AboutPreview from "@/components/sections/AboutPreview";
+import AboutPreview from "@/components/sections/AboutPreview";
+import MenuPreview from "@/components/sections/MenuPreview";
 
-// import MenuPreview from "@/components/sections/MenuPreview";
-
-// import Location from "@/components/sections/Location";
-// import FinalCTA from "@/components/sections/FinalCTA";
+import Location from "@/components/sections/Location";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <div className="pb-6 sm:pb-8">
+    <div className="">
       <Hero />
       <SocialProof />
       <BestSellers />
-      {/* <AboutPreview />
-
+      <AboutPreview />
       <MenuPreview />
       <Location />
-      <FinalCTA /> */}
+      <FinalCTA />
+      <Footer></Footer>
     </div>
   );
 }
