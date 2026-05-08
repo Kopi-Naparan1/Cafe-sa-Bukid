@@ -1,10 +1,13 @@
 import Section from "@/components/ui/Section";
-
+import MenuHero from "./components/MenuHero";
+import MenuItems from "./components/MenuItems";
+import MenuFinalCTA from "./components/MenuFinalCTA";
 export default function Menu() {
   return (
     <Section>
-      <h1>Menu</h1>
-      <p>Welcome to Menu Page</p>
+      <MenuHero />
+      <MenuItems />
+      <MenuFinalCTA />
     </Section>
   );
 }

@@ -1,10 +1,16 @@
-import Section from "@/components/ui/Section";
-
+import ContactHero from "./components/ContactHero";
+import Location from "./components/Location";
+import VisitInformation from "./components/VisitInformation";
+import LandMark from "./components/LandMark";
+import ContactFinalCTA from "./components/ContactFinalCTA";
 export default function Contact() {
   return (
-    <Section>
-      <h1>Contact</h1>
-      <p>Welcome to Contact Page</p>
-    </Section>
+    <div>
+      <ContactHero />
+      <Location />
+      <VisitInformation />
+      <LandMark />
+      <ContactFinalCTA />
+    </div>
   );
 }

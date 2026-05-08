@@ -6,7 +6,6 @@ import MenuPreview from "@/components/sections/MenuPreview";
 
 import Location from "@/components/sections/Location";
 import FinalCTA from "@/components/sections/FinalCTA";
-import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <MenuPreview />
       <Location />
       <FinalCTA />
-      <Footer></Footer>
     </div>
   );
 }

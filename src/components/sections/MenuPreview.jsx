@@ -15,9 +15,9 @@ export default function MenuPreview() {
     <Section className="grid min-h-[90vh] gap-10 w-full rounded-2xl overflow-hidden md:grid-cols-5 md:items-center">
       {/* TEXT — 60% */}
       <div className="md:col-span-3 flex flex-col justify-center gap-2 md:gap-4">
-        <span className="  text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
+        {/* <span className="  text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
           Menu
-        </span>
+        </span> */}
 
         <h2 className="font-heading font-extrabold tracking-tight text-left text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">
           Choose what you&apos;re craving

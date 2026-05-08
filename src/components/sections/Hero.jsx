@@ -51,7 +51,8 @@ export default function Hero() {
           className="
           mt-8 flex flex-col  
           md:flex-row gap-4
-          md:mt-12 md:justify-start
+          md:mt-12 md:justify-center
+          md:items-center
           flex-1 w-[40vw] md:flex-none
 
         "

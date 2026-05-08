@@ -1,10 +1,16 @@
-import Section from "@/components/ui/Section";
-
+import AboutHero from "./component/AboutHero";
+import AboutStory from "./component/AboutStory";
+import Gallery from "./component/Gallery";
+import AboutFinalCTA from "./component/AboutFinalCTA";
+import WhyChooseUs from "./component/WhyChooseUs";
 export default function About() {
   return (
-    <Section>
-      <h1>About</h1>
-      <p>Welcome to About Page</p>
-    </Section>
+    <div>
+      <AboutHero />
+      <AboutStory />
+      <WhyChooseUs />
+      <Gallery />
+      <AboutFinalCTA />
+    </div>
   );
 }
