@@ -60,7 +60,7 @@ export default function Hero() {
           <Link
             href="/menu"
             className="
-              rounded-full bg-accent  py-3 flex flex-1 md:flex-none items-center justify-center
+              rounded-full bg-accent shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]  py-3 flex flex-1 md:flex-none items-center justify-center
               text-center
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium text-background
               transition-all duration-150 hover:bg-accent/80 hover:-translate-y-px
@@ -72,7 +72,7 @@ export default function Hero() {
           <Link
             href="/contact"
             className="   text-center items-center justify-center
-              rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
+              rounded-full border-2 border-primary shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
               transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px
               md:px-10
@@ -88,7 +88,7 @@ export default function Hero() {
         className=" 
 
         relative md:w-[40vw] w-[clamp(280px,80vw,520px)] mx-auto overflow-hidden rounded-2xl
-        aspect-4/3
+        aspect-4/3 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)]
       
         md:aspect-auto md:self-stretch md:rounded-3xl
         ring-4 ring-primary/30

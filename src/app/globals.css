@@ -17,6 +17,7 @@
   /* SECONDARY → richer wood brown */
   --color-secondary: #7a5a3c;
   --color-secondary-light: #9a7452;
+  --color-secondary-header-footer: #b89d85 /* for header/footer contrast */;
   --color-secondary-dark: #5c432d;
 
   /* ACCENT → coffee gold (less aggressive) */

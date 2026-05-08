@@ -41,7 +41,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-primary/80 bg-secondary-light/40 text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.12)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-primary/80 bg-secondary-header-footer text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
         {/* Logo */}
         <Link
@@ -49,7 +49,7 @@ export default function Header() {
           className="group inline-flex items-center gap-2.5 rounded-xl p-1 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <Image
-            className="rounded-full ring-2 ring-dark/80 transition-all group-hover:ring-dark/50"
+            className="rounded-full ring-2 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-dark/80 transition-all group-hover:ring-dark/50"
             width={44}
             height={44}
             loading="eager"
@@ -96,7 +96,7 @@ export default function Header() {
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="cursor-pointer rounded-full p-2 ring-2 ring-dark/70 transition-all duration-150 hover:bg-dark/5 hover:ring-dark/50 focus-visible:outline-none focus-visible:ring-primary md:hidden"
+          className="cursor-pointer rounded-full p-2 ring-2 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-dark/70 transition-all duration-150 hover:bg-dark/5 hover:ring-dark/50 focus-visible:outline-none focus-visible:ring-primary md:hidden"
         >
           {isOpen ? (
             <X size={18} strokeWidth={2.5} />
