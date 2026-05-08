@@ -30,7 +30,7 @@ export default function MobileVersionTestimonial({
 
   return (
     <div className="relative md:hidden">
-      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 px-4 custom-scroll ">
+      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pt-3 pb-4 px-4 ">
         {testimonials.map((item, index) => {
           const isFlipped = flippedIndex === index;
           const isDescriptionActive = activeDescriptionIndex === index;
@@ -47,7 +47,7 @@ export default function MobileVersionTestimonial({
               </div>
 
               {/* FLIP AREA */}
-              <div className="relative " style={{ height: "300px" }}>
+              <div className="relative " style={{ height: "350px" }}>
                 <div
                   className={`
         absolute inset-0
