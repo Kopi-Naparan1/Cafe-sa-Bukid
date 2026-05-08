@@ -69,10 +69,10 @@ export default function SocialProof() {
   );
 
   return (
-    <Section className="  min-h-[clamp(50vh,60vh,75vh)]  flex flex-col bg-secondary-light/30 rounded-2xl overflow-hidden max-h-full">
-      <span className="mb-3 text-xs font-medium uppercase tracking-[.16em] text-primary/60 md:mb-4">
+    <Section className="  min-h-[clamp(50vh,60vh,75vh)]  flex flex-col bg-secondary-light/30 rounded-2xl overflow-hidden max-h-full shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)]">
+      {/* <span className="mb-3 text-xs font-medium uppercase tracking-[.16em] text-primary/60 md:mb-4">
         Loved by Locals
-      </span>
+      </span> */}
       <h2 className="font-heading font-extrabold tracking-tight text-left text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">
         Why People Keep Coming Back
       </h2>

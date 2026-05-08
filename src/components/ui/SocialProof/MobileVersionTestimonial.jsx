@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
@@ -6,11 +7,33 @@ export default function MobileVersionTestimonial({
   flippedIndex,
   setFlippedIndex,
 }) {
+  const [activeDescriptionIndex, setActiveDescriptionIndex] = useState(null);
+  const descriptionRefs = useRef([]);
+
+  useEffect(() => {
+    function handleDocumentClick(event) {
+      const tappedDescriptionIndex = descriptionRefs.current.findIndex((node) =>
+        node?.contains(event.target),
+      );
+
+      setActiveDescriptionIndex(
+        tappedDescriptionIndex === -1 ? null : tappedDescriptionIndex,
+      );
+    }
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   return (
     <div className="relative md:hidden">
       <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-4 px-4 custom-scroll ">
         {testimonials.map((item, index) => {
           const isFlipped = flippedIndex === index;
+          const isDescriptionActive = activeDescriptionIndex === index;
 
           return (
             <div
@@ -24,17 +47,18 @@ export default function MobileVersionTestimonial({
               </div>
 
               {/* FLIP AREA */}
-              <div className="relative" style={{ height: "300px" }}>
+              <div className="relative " style={{ height: "300px" }}>
                 <div
                   className={`
         absolute inset-0
+
         transition-transform duration-500
         transform-3d
         ${isFlipped ? "rotate-y-180" : ""}
       `}
                 >
                   {/* FRONT */}
-                  <div className="absolute inset-0 backface-hidden bg-secondary/30 rounded-b-2xl px-4 py-4 flex flex-col gap-3 ring-1 ring-secondary/90">
+                  <div className="absolute inset-0 backface-hidden shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] bg-secondary/30 rounded-b-2xl px-4 py-4 flex flex-col gap-3 ring-1 ring-secondary/90">
                     <div className="flex items-center gap-3 shrink-0">
                       <Image
                         alt={`${item.name} picture`}
@@ -59,13 +83,25 @@ export default function MobileVersionTestimonial({
                     </div>
 
                     {/* Scrollable description — no clamp */}
-                    <p className="text-sm leading-relaxed text-dark/80 flex-1 overflow-y-auto overscroll-contain pr-1 custom-scroll">
+                    <p
+                      ref={(node) => {
+                        descriptionRefs.current[index] = node;
+                      }}
+                      className={`text-sm leading-relaxed text-dark/80 flex-1 pr-1 custom-scroll ${
+                        isDescriptionActive
+                          ? "overflow-y-auto overscroll-contain"
+                          : "overflow-hidden"
+                      }`}
+                    >
                       {item.description}
                     </p>
 
                     {/* Flip trigger — ONLY this flips */}
                     <button
-                      onClick={() => setFlippedIndex(isFlipped ? null : index)}
+                      onClick={() => {
+                        setActiveDescriptionIndex(null);
+                        setFlippedIndex(isFlipped ? null : index);
+                      }}
                       className="flex items-center justify-end gap-1 pt-2 border-t border-secondary/20 shrink-0 w-full cursor-pointer active:opacity-60 transition-opacity"
                     >
                       <span className="text-xs text-dark/35">
@@ -75,7 +111,7 @@ export default function MobileVersionTestimonial({
                   </div>
 
                   {/* BACK */}
-                  <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-b-2xl overflow-hidden">
+                  <div className="absolute inset-0 rotate-y-180 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] backface-hidden rounded-b-2xl overflow-hidden">
                     <Image
                       src={item.clickedPicture}
                       alt="clicked view"
@@ -100,7 +136,10 @@ export default function MobileVersionTestimonial({
 
                       {/* Flip back trigger — never shrinks */}
                       <button
-                        onClick={() => setFlippedIndex(null)}
+                        onClick={() => {
+                          setActiveDescriptionIndex(null);
+                          setFlippedIndex(null);
+                        }}
                         className="shrink-0 text-white/55 text-xs active:opacity-60 transition-opacity cursor-pointer"
                       >
                         ↩ back
