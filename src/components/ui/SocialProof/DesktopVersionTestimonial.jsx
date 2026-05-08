@@ -18,7 +18,7 @@ export default function DesktopVersionTestimonial({
             // ← no onClick on card
           >
             {/* STATIC TITLE */}
-            <div className="bg-secondary rounded-t-xl py-2.5 text-sm font-bold text-background/70 px-5 ring-1 ring-secondary/90 truncate">
+            <div className="bg-secondary-light rounded-t-xl py-2.5 text-sm font-bold text-background/70 px-5 ring-1 ring-secondary/90 truncate">
               {item.title}
             </div>
 

@@ -42,7 +42,7 @@ export default function MobileVersionTestimonial({
               // ← no onClick here anymore
             >
               {/* STATIC TITLE */}
-              <div className="bg-secondary rounded-t-2xl py-2 px-4 font-bold text-background/70 ring-1 ring-secondary/90 text-sm truncate">
+              <div className="bg-secondary-light rounded-t-2xl py-2 px-4 font-bold text-background/70 ring-1 ring-secondary/90 text-sm truncate">
                 {item.title}
               </div>
 

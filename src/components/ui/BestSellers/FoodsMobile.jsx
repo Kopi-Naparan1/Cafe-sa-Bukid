@@ -13,7 +13,7 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
             // ← no onClick on card
           >
             {/* STATIC TITLE */}
-            <div className="relative flex items-center justify-between bg-secondary px-3 py-3  rounded-t-xl ring-1 ring-secondary/90">
+            <div className="relative flex items-center justify-between bg-secondary-light px-3 py-3  rounded-t-xl ring-1 ring-secondary/90">
               {/* Name */}
               <h3 className="text-sm font-semibold leading-tight justify-center   text-background/80 truncate">
                 {item.name}

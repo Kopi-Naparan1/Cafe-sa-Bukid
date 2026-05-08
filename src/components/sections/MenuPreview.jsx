@@ -77,7 +77,7 @@ export default function MenuPreview() {
                 className="object-cover relative"
                 sizes="(max-width: 768px) 50vw, 40vw"
               />
-              <div className="absolute md:rounded-b-2xl bg-secondary justify-center items-center  text-center text-background/90 text-sm font-semibold tracking-wide  inset-x-0 top-0">
+              <div className="absolute md:rounded-b-2xl bg-secondary-light justify-center items-center  text-center text-background/90 text-sm font-semibold tracking-wide  inset-x-0 top-0">
                 {item.label}
               </div>
             </>

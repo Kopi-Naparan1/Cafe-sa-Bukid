@@ -14,7 +14,7 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
             // ← no onClick on card
           >
             {/* STATIC TITLE */}
-            <div className="flex items-center justify-between bg-secondary px-4 py-3  rounded-t-xl ring-1 ring-secondary/90">
+            <div className="flex items-center justify-between bg-secondary-light px-4 py-3  rounded-t-xl ring-1 ring-secondary/90">
               {/* Name */}
               <h3 className="text-sm font-semibold leading-tight   text-background/80  truncate">
                 {item.name}
