@@ -21,7 +21,7 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
               </h3>
 
               {/* Price */}
-              <span className="text-xs font-bold text-secondary  tracking-wide bg-background/60 group-hover:bg-background/95 transition-background duration-150 ease-in-out px-2 py-1 rounded-full ring-2 ring-dark/20">
+              <span className="text-xs text-background/60 font-bold tracking-wide bg-secondary-light/50 group-hover:bg-background/85 group-hover:text-dark/85 transition-background duration-150 ease-in-out px-2 py-1 rounded-full ring-2 ring-background/20">
                 ₱ {item.price}
               </span>
             </div>
@@ -40,12 +40,13 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
                 className={`
           absolute inset-0
           transition-transform duration-500
+
           transform-3d
           ${isFlipped ? "rotate-y-180" : ""}
         `}
               >
                 {/* FRONT */}
-                <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-b-2xl overflow-hidden">
+                <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-b-2xl overflow-hidden shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)]">
                   <Image
                     src={item.image}
                     alt="clicked view"
@@ -58,7 +59,7 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
                   {/* Bottom bar */}
                   <div className="absolute bottom-0 inset-x-0 px-4 py-3 flex items-center gap-2">
                     <div className="flex items-center gap-2 min-w-0 flex-1">
-                      <span className="text-background/80  backdrop-blur-sm bg-secondary/80 px-2 py-1 border-dark/30 rounded-full border text-xs font-semibold drop-shadow-sm truncate">
+                      <span className="text-background/80  backdrop-blur-md bg-secondary-light/40 px-2 py-1 border-dark/30 rounded-full border text-xs font-semibold drop-shadow-sm truncate">
                         {item.tag}
                       </span>
                     </div>
@@ -71,7 +72,7 @@ export default function FoodDesktop({ foods, flippedIndex, setFlippedIndex }) {
                   </div>
                 </div>
                 {/* BACK */}
-                <div className="absolute inset-0 backface-hidden bg-secondary/30 rounded-b-2xl px-5 py-4 flex flex-col gap-3 ring-1 ring-secondary/90">
+                <div className="absolute inset-0 backface-hidden bg-secondary/30 rounded-b-2xl px-5 py-4 flex flex-col gap-3 ring-1 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)] ring-secondary/90">
                   {/* Scrollable description */}
                   <div className="text-sm leading-relaxed text-dark/80 flex-1 overflow-y-auto overscroll-contain pr-1 custom-scroll">
                     <div className="flex flex-col mb-2">
