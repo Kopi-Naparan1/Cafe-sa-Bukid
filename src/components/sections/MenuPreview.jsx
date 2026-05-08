@@ -88,9 +88,11 @@ export default function MenuPreview() {
       <Link
         href="/about"
         className="
+        h-[5vh]
 rounded-r-4xl rounded-l-sm
 w-[clamp(160px,50vw,240px)]
-py-2
+ 
+
   items-center justify-center
 text-center
 flex
