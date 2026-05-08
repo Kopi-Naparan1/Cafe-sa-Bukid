@@ -12,7 +12,7 @@ const menuItems = [
 
 export default function MenuPreview() {
   return (
-    <Section className="grid min-h-[90vh] gap-10 w-full rounded-2xl overflow-hidden md:grid-cols-5 md:items-center">
+    <Section className="grid min-h-[90vh] gap-6 w-full rounded-2xl overflow-hidden md:grid-cols-5 md:items-center">
       {/* TEXT — 60% */}
       <div className="md:col-span-3 flex flex-col justify-center gap-2 md:gap-4">
         {/* <span className="  text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
@@ -45,13 +45,16 @@ export default function MenuPreview() {
           w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
           md:mt-6
           py-2.5
-          flex items-center justify-center
+            items-center justify-center
           text-center
+          hidden
+          md:flex
           text-[clamp(.9rem,1.5vw,1.1rem)]
           font-medium text-background
           bg-accent
           transition-all duration-150
           hover:bg-accent/80 hover:translate-x-px
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
           md:px-10
           "
         >
@@ -64,7 +67,7 @@ export default function MenuPreview() {
         {menuItems.map((item) => (
           <div
             key={item.id}
-            className="relative rounded-l-sm rounded-r-3xl md:rounded-b-2xl overflow-hidden aspect-square md:rounded-t-sm ring-1 ring-secondary/90 "
+            className="relative rounded-l-sm rounded-r-3xl shadow-[0_4px_12px_2px_rgba(0,0,0,0.2)] md:rounded-b-2xl overflow-hidden aspect-square md:rounded-t-sm ring-1 ring-secondary/90 "
           >
             <>
               <Image
@@ -81,6 +84,28 @@ export default function MenuPreview() {
           </div>
         ))}
       </div>
+
+      <Link
+        href="/about"
+        className="
+          rounded-r-4xl rounded-l-sm
+          w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
+          md:mt-6
+        py-2
+          flex items-center justify-center
+          text-center
+          md:hidden
+          text-[clamp(.9rem,1.5vw,1.1rem)]
+          font-medium text-background
+          bg-accent
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+          transition-all duration-150
+          hover:bg-accent/80 hover:translate-x-px
+          md:px-10
+          "
+      >
+        View Full Menu →
+      </Link>
     </Section>
   );
 }

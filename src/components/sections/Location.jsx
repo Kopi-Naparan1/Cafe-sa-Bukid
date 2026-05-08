@@ -2,7 +2,7 @@ import Section from "../ui/Section";
 
 export default function Location() {
   return (
-    <Section className="grid min-h-[90vh] gap-10 w-full rounded-2xl bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center">
+    <Section className="grid min-h-[80vh] gap-10 w-full rounded-2xl shadow-[0_4px_12px_2px_rgba(0,0,0,0.3)] bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center">
       {/* MAP */}
       <div className="md:col-span-3 relative overflow-hidden rounded-2xl h-[clamp(20rem,40vh,25rem)] md:h-full ring-4 ring-secondary/60">
         <iframe
@@ -13,7 +13,7 @@ export default function Location() {
         />
       </div>
       {/* TEXT — 60% */}
-      <div className="md:col-span-2 flex flex-col md:items-end items-center justify-center md:justify-end gap-3 md:gap-4">
+      <div className="md:col-span-2 flex flex-col md:items-end items-center justify-center md:justify-end gap-4 md:gap-4">
         <span className="  text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
           Location
         </span>
@@ -41,17 +41,19 @@ export default function Location() {
           className="
   rounded-full md:rounded-none md:rounded-l-4xl md:rounded-r-sm
 
-  w-[clamp(160px,50vw,240px)]
-  md:w-auto md:max-w-[25vw]
+  w-[clamp(160px,60vw,240px)]
+  md:w-auto md:max-w-[30vw]
+  max-w-full
 
   py-2.5
+  px-2
   flex items-center justify-center
 
   text-center
   text-[clamp(.9rem,1.5vw,1.1rem)]
   font-medium text-background
   bg-accent
-
+  shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
   transition-all duration-150
 
   hover:bg-accent/80 hover:-translate-y-px

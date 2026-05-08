@@ -6,10 +6,10 @@ import HeroImage from "../../app/assets/hero-image.webp";
 import AboutStrip from "../ui/AboutPreview/AboutStrip";
 export default function AboutPreview() {
   return (
-    <Section className="grid min-h-[90vh] gap-10 px-4 md:px-0 max-w-6xl mx-auto rounded-2xl bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center md:justify-center">
+    <Section className="grid min-h-[75vh] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)] gap-10 px-4 md:px-0 max-w-6xl mx-auto rounded-2xl bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center md:justify-center">
       {/* TEXT — 60% */}
       <div className="md:col-span-3 flex flex-col justify-center gap-2 md:gap-4">
-        <span className="  text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
+        <span className=" hidden md:block text-xs font-medium uppercase tracking-[.16em] text-primary/60  ">
           About Us
         </span>
 
@@ -55,11 +55,14 @@ export default function AboutPreview() {
           w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
           md:mt-6
           py-2.5
-          flex items-center justify-center
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+           items-center justify-center
           text-center
           text-[clamp(.9rem,1.5vw,1.1rem)]
           font-medium text-background
           bg-accent
+          hidden
+          md:block
           transition-all duration-150
           hover:bg-accent/80 hover:translate-x-px
           md:px-10
@@ -86,6 +89,28 @@ export default function AboutPreview() {
           <AboutStrip />
         </div>
       </div>
+      <Link
+        href="/about"
+        className="
+          rounded-r-4xl rounded-l-sm
+          w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
+          md:mt-6
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+          py-2.5
+           items-center justify-center
+          text-center
+          text-[clamp(.9rem,1.5vw,1.1rem)]
+          font-medium text-background
+          bg-accent
+          flex
+          md:hidden
+          transition-all duration-150
+          hover:bg-accent/80 hover:translate-x-px
+          md:px-10
+        "
+      >
+        Discover Our Story
+      </Link>
     </Section>
   );
 }
