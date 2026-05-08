@@ -7,7 +7,7 @@ export default function Gallery() {
   return (
     <Section
       className="
-        min-h-[90vh]
+        min-h-[80vh]
         w-full
         rounded-2xl
         overflow-hidden

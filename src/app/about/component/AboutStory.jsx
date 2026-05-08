@@ -6,14 +6,14 @@ import HeroImage from "../../assets/hero-image.webp";
 
 export default function AboutStory() {
   return (
-    <Section className="grid min-h-[90vh]  max-w-6xl mx-auto gap-10 rounded-2xl bg-secondary-light/30 overflow-hidden px-4 md:px-0 md:grid-cols-5 md:items-center">
+    <Section className="grid min-h-[85vh]  max-w-6xl mx-auto gap-14 rounded-2xl bg-secondary-light/30 overflow-hidden px-4 md:px-0 md:grid-cols-5 md:items-center">
       {/* TEXT — 60% */}
       <div className="md:col-span-3 items-center md:items-start flex flex-col justify-center gap-3 md:gap-4">
         <span className="text-xs font-medium uppercase tracking-[.16em] text-primary/60">
           About Us
         </span>
 
-        <h2 className="font-heading font-extrabold tracking-tight text-left text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">
+        <h2 className="font-heading font-extrabold tracking-tight md:text-left text-[clamp(1.6rem,4vw,3rem)] text-center  leading-[1.1]">
           Why Café sa Bukid exists
         </h2>
 

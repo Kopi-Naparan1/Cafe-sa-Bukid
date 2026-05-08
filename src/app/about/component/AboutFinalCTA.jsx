@@ -13,7 +13,7 @@ export default function AboutFinalCTA() {
       <p
         className="
 
-  max-w-md text-left leading-relaxed
+  max-w-md  text-center md:text-left leading-relaxed
   text-[clamp(.9rem,1.5vw,1rem)]
   text-dark/65
 "
@@ -32,7 +32,7 @@ export default function AboutFinalCTA() {
               md:px-12
             "
         >
-          → View Menu
+          View Menu
         </Link>
         <Link
           href="/contact"
@@ -43,7 +43,7 @@ export default function AboutFinalCTA() {
               md:px-12
             "
         >
-          → Get Directions
+          Get Directions
         </Link>
       </div>
     </Section>

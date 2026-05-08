@@ -144,33 +144,32 @@ export default function MenuItems() {
                     <div
                       onClick={() => toggleItem(item.id)}
                       key={item.id}
-                      className="bg-background/60 flex flex-row items-center p-2 rounded-lg shadow-sm"
+                      className="bg-background/60 relative flex flex-row items-center p-2 rounded-lg shadow-sm"
                     >
                       <div>
-                        <h3 className="text-md font-bold mb-2">{item.name}</h3>
-
                         <div
                           className={`
     overflow-hidden
     transition-all duration-150 ease-in-out
-    ${isOpen ? "max-h-40 opacity-100 mb-4" : "max-h-0 opacity-0"}
+    ${isOpen ? "max-h-[30vh] opacity-100 mb-4" : "max-h-0 opacity-0"}
   `}
                         >
                           <Image
                             src={mockImage}
                             alt={item.name}
-                            className="w-[95%] h-[clamp(7rem,22vw,10rem)]   rounded-lg object-cover"
+                            className="w-[95%] h-[clamp(8rem,30vw,15rem)]   rounded-lg object-cover"
                           />
                         </div>
+                        <h3 className="text-md font-bold mb-2">{item.name}</h3>
 
                         <p
                           className={`
-  text-sm font-bold text-accent
+  text-sm font-bold
   transition-colors duration-150
   ${
     isOpen
       ? "bg-secondary-light rounded-md px-2 py-1 text-background/80 inline-flex w-fit"
-      : ""
+      : " text-secondary-light/70"
   }
 `}
                         >
@@ -178,7 +177,7 @@ export default function MenuItems() {
                         </p>
                       </div>
                       <ChevronDown
-                        className={`ml-auto justify-center shrink-0  transition-transform duration-100
+                        className={`ml-auto shrink-0 absolute top-2 right-2 transition-transform duration-100
     ${isOpen ? "rotate-180" : "rotate-0"}`}
                       />
                     </div>
