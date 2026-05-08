@@ -88,21 +88,18 @@ export default function MenuPreview() {
       <Link
         href="/about"
         className="
-          rounded-r-4xl rounded-l-sm
-          w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
-          md:mt-6
-        py-2
-          flex items-center justify-center
-          text-center
-          md:hidden
-          text-[clamp(.9rem,1.5vw,1.1rem)]
-          font-medium text-background
-          bg-accent
-          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
-          transition-all duration-150
-          hover:bg-accent/80 hover:translate-x-px
-          md:px-10
-          "
+rounded-r-4xl rounded-l-sm
+w-[clamp(160px,50vw,240px)]
+py-2
+flex items-center justify-center
+text-center
+leading-[1.2]
+text-[clamp(.9rem,1.5vw,1.1rem)]
+font-medium text-background
+bg-accent
+shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+transition-all duration-150
+"
       >
         View Full Menu →
       </Link>
