@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
   return (
-    <div className="flex flex-col gap-4 md:hidden">
+    <div className="flex flex-col gap-6 md:hidden">
       {foods.map((item, index) => {
         const isFlipped = flippedIndex !== index;
 
@@ -20,7 +20,7 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
               </h3>
 
               {/* Price */}
-              <span className="absolute right-2 -top-3 text-xs font-bold text-secondary  tracking-wide bg-background/90 group-hover:bg-background/95 transition-background duration-150 ease-in-out px-2 py-1 rounded-t-full rounded-br-full ring-2 ring-dark/90">
+              <span className="absolute right-2 -top-3 text-xs font-bold text-background/90  tracking-wide bg-secondary-light  group-hover:bg-background/95 shadow-[0_4px_12px_2px_rgba(0,0,0,0.4)] transition-background duration-150 ease-in-out px-2 py-1 rounded-t-full rounded-br-full ring-2 ring-dark/60">
                 ₱ {item.price}
               </span>
             </div>
@@ -41,7 +41,7 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
         `}
               >
                 {/* FRONT */}
-                <div className="absolute inset-0 rotate-y-180 backface-hidden rounded-b-2xl overflow-hidden">
+                <div className="shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)] absolute inset-0 rotate-y-180 backface-hidden rounded-b-2xl overflow-hidden">
                   <Image
                     src={item.image}
                     alt="clicked view"
@@ -54,7 +54,7 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
                   {/* Bottom bar */}
                   <div className="absolute bottom-0 inset-x-0 px-4 py-3 flex items-center gap-2">
                     <div className="flex items-center gap-2 min-w-0 flex-1">
-                      <span className="text-background/80  backdrop-blur-sm bg-secondary/80 px-2 py-1 border-dark/30 rounded-full border text-xs font-semibold drop-shadow-sm truncate">
+                      <span className="text-background/80  backdrop-blur-sm bg-secondary/80 px-2 py-1 shadow-[0_4px_12px_2px_rgba(0,0,0,0.4)] border-dark/30 rounded-full border text-xs font-semibold drop-shadow-sm truncate">
                         {item.tag}
                       </span>
                     </div>
@@ -68,7 +68,7 @@ export default function FoodsMobile({ foods, flippedIndex, setFlippedIndex }) {
                 </div>
 
                 {/* BACK */}
-                <div className="absolute inset-0 backface-hidden bg-secondary/30 rounded-b-2xl px-5 py-4 flex flex-col gap-3 ring-1 ring-secondary/90">
+                <div className="absolute inset-0 backface-hidden bg-secondary/30 rounded-b-2xl px-5 py-4 flex flex-col gap-3 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.4)] ring-1 ring-secondary/90">
                   {/* Scrollable description */}
                   <div className="text-sm leading-relaxed text-dark/80 flex-1 overflow-y-auto overscroll-contain pr-1 custom-scroll">
                     <div className="flex flex-col mb-2">
