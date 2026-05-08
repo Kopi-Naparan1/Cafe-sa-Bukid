@@ -41,15 +41,15 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-primary/80 bg-secondary-header-footer text-dark shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 rounded-b-2xl border-b-2 border-primary/80 bg-secondary-light  text-background/60 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
-          className="group inline-flex items-center gap-2.5 rounded-xl p-1 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="group inline-flex items-center gap-2.5 rounded-xl p-1 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <Image
-            className="rounded-full ring-2 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-dark/80 transition-all group-hover:ring-dark/50"
+            className="rounded-full ring-2 bg-background/50 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-background/70 transition-all group-hover:ring-accent/50"
             width={44}
             height={44}
             loading="eager"
@@ -60,7 +60,7 @@ export default function Header() {
             <span className="block font-heading text-sm font-semibold tracking-tight sm:text-base">
               Cafe sa Bukid
             </span>
-            <span className="block text-xs tracking-tight text-dark/55 sm:text-sm">
+            <span className="block text-xs tracking-tight text-background/60 /55 sm:text-sm">
               Malaybalay, Bukidnon
             </span>
           </span>
@@ -78,8 +78,8 @@ export default function Header() {
                     aria-current={isActive ? "page" : undefined}
                     className={`inline-flex rounded-xl border-2 px-4 py-1.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-transparent text-dark/80 hover:border-primary/25 hover:bg-primary/5 hover:text-dark"
+                        ? "border-accent bg-accent/40 text-background/70"
+                        : "border-transparent text-background/60 hover:border-primary/20 hover:bg-accent/20 hover:text-background/40"
                     }`}
                   >
                     {item.label}
@@ -129,8 +129,8 @@ export default function Header() {
                     aria-current={isActive ? "page" : undefined}
                     className={`flex items-center rounded-xl border-2 px-4 py-2.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-transparent text-dark/80 hover:border-primary/25 hover:bg-primary/5 hover:text-dark"
+                        ? "border-accent bg-accent/50 text-background/70"
+                        : "border-transparent text-background/60 hover:border-primary/25 hover:bg-accent/30 hover:text-background/40"
                     }`}
                   >
                     {item.label}

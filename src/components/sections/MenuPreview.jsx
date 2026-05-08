@@ -91,8 +91,10 @@ export default function MenuPreview() {
 rounded-r-4xl rounded-l-sm
 w-[clamp(160px,50vw,240px)]
 py-2
-flex items-center justify-center
+  items-center justify-center
 text-center
+flex
+md:hidden
 leading-[1.2]
 text-[clamp(.9rem,1.5vw,1.1rem)]
 font-medium text-background
