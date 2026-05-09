@@ -27,7 +27,7 @@ export default function DesktopWhyChooseUs({ items }) {
 
           <div className="p-6 flex flex-col  ">
             <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-            <div className=" ">
+            <div>
               <p className="text-md leading-relaxed text-dark/70 whitespace-pre-line">
                 {item.description1}
               </p>

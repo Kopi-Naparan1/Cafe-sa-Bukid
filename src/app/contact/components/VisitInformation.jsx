@@ -8,7 +8,8 @@ const items = [
   {
     id: 1,
     title: "Address",
-    description1: "Sayre Highway, Dahilayan, Manolo Fortich, Bukidnon.",
+    description1: `Sayre Highway, Dahilayan,
+     Manolo Fortich, Bukidnon.`,
     description2:
       "Near Dahilayan Adventure Park with parking available on-site.",
     image: mockImage,
@@ -16,7 +17,8 @@ const items = [
   {
     id: 2,
     title: "Opening Hours",
-    description1: "Monday – Sunday, 8:00 AM – 8:00 PM.",
+    description1: `Monday – Sunday,
+     8:00 AM – 8:00 PM.`,
     description2: " Best enjoyed during quiet mornings and sunset hours.",
     image: mockImage,
   },

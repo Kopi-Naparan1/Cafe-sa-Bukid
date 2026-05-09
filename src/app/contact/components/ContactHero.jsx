@@ -1,6 +1,6 @@
 export default function ContactHero() {
   return (
-    <div className="w-full min-h-[35vh] text-center  justify-center flex flex-col items-center  gap-2  ">
+    <div className="w-full min-h-[25vh] text-center  justify-center flex flex-col items-center  gap-2  ">
       <h1
         className=" font-heading font-extrabold tracking-tight
             text-[clamp(2.2rem,6vw,4.5rem)] leading-[1.08]"

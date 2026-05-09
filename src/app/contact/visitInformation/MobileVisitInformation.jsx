@@ -27,7 +27,7 @@ export default function MobileVisitInformation({ items }) {
 
           <div className="p-5 flex flex-col flex-1">
             <h3 className="font-semibold text-lg mb-3">{item.title}</h3>
-            <p className="text-md leading-relaxed text-dark/70">
+            <p className="text-md leading-relaxed text-dark/70  whitespace-pre-line">
               {item.description1}
             </p>
             <p className="text-sm leading-relaxed text-dark/30 mt-auto pt-4">

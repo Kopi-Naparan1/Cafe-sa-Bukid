@@ -39,7 +39,7 @@ export default function LandMark() {
   return (
     <Section
       className="
-        min-h-[90vh]
+        min-h-[85vh]
         w-full
         rounded-2xl
         overflow-hidden
@@ -57,7 +57,9 @@ export default function LandMark() {
         md:py-10
       "
     >
-      {" "}
+      <span className="block md:hidden text-xs font-medium uppercase text-center tracking-[.16em] text-primary/60 mb-6">
+        Getting Here
+      </span>{" "}
       {/* BLOCKS — LEFT */}
       <div className="md:col-span-3 flex flex-col gap-6">
         {travelHelpBlocks.map((block) => (
@@ -80,6 +82,7 @@ export default function LandMark() {
       {/* TEXT — RIGHT */}
       <div
         className="
+        mt-8
           md:col-span-2
           flex flex-col
           justify-center
@@ -90,7 +93,7 @@ export default function LandMark() {
           md:text-right
         "
       >
-        <span className="text-xs font-medium uppercase text-center tracking-[.16em] text-primary/60 mb-4">
+        <span className="hidden md:block text-xs font-medium uppercase text-center tracking-[.16em] text-primary/60 mb-4">
           Getting Here
         </span>
         <h2 className="font-heading font-extrabold tracking-tight text-center md:text-right text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">

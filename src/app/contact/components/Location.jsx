@@ -2,7 +2,7 @@ import Section from "../../../components/ui/Section";
 
 export default function Location() {
   return (
-    <Section className="grid min-h-[90vh] gap-10 w-full rounded-2xl bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center">
+    <Section className="grid min-h-[75vh] gap-10 w-full rounded-2xl bg-secondary-light/30 overflow-hidden md:grid-cols-5 md:items-center">
       {/* MAP */}
       <div className="md:col-span-3 relative overflow-hidden rounded-2xl h-[clamp(20rem,40vh,25rem)] md:h-full ring-4 ring-secondary/60">
         <iframe
