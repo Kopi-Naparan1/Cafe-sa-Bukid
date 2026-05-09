@@ -93,7 +93,7 @@ export default function AboutPreview() {
         href="/about"
         className="
           rounded-r-4xl rounded-l-sm
-          w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
+          w-[clamp(180px,55vw,320px)] md:w-auto md:max-w-[25vw]
           md:mt-6
               shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
           py-2.5

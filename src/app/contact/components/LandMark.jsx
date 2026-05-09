@@ -57,7 +57,7 @@ export default function LandMark() {
         md:py-10
       "
     >
-      <span className="block md:hidden text-xs font-medium uppercase text-center tracking-[.16em] text-primary/60 mb-6">
+      <span className="block md:hidden text-xs font-medium uppercase text-left tracking-[.16em] text-primary/60 mb-6">
         Getting Here
       </span>{" "}
       {/* BLOCKS — LEFT */}
@@ -85,10 +85,11 @@ export default function LandMark() {
         mt-8
           md:col-span-2
           flex flex-col
-          justify-center
+          justify-start
+          md:justify-center
           gap-3 md:gap-5
 
-          items-center
+          items-start
           md:items-end
           md:text-right
         "
@@ -96,7 +97,7 @@ export default function LandMark() {
         <span className="hidden md:block text-xs font-medium uppercase text-center tracking-[.16em] text-primary/60 mb-4">
           Getting Here
         </span>
-        <h2 className="font-heading font-extrabold tracking-tight text-center md:text-right text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">
+        <h2 className="font-heading font-extrabold tracking-tight text-left md:text-right text-[clamp(1.6rem,4vw,3rem)] leading-[1.1]">
           Easy to Find, Worth the Trip
         </h2>
 
@@ -114,8 +115,10 @@ export default function LandMark() {
     px-6 md:px-10
     py-3
     md:mt-6
+    hidden
+    md:flex
 
-    flex items-center justify-center
+      items-center justify-center
     text-center
 
     text-sm sm:text-base md:text-lg
@@ -136,6 +139,30 @@ export default function LandMark() {
   "
         >
           Open in Google Maps
+        </Link>
+
+        <Link
+          href="/about"
+          className="
+          rounded-r-4xl rounded-l-sm
+          w-[clamp(180px,50vw,300px)] 
+         
+              shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+          py-2.5
+          md:hidden
+           items-center justify-center
+          text-center
+          text-[clamp(.9rem,1.5vw,1.1rem)]
+          font-medium text-background
+          bg-accent
+          flex
+      
+          transition-all duration-150
+          hover:bg-accent/80 hover:translate-x-px
+         
+        "
+        >
+          Open in Google Maps →
         </Link>
       </div>
     </Section>

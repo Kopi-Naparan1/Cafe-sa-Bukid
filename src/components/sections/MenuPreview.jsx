@@ -88,7 +88,7 @@ export default function MenuPreview() {
       <Link
         href="/about"
         className="
-        h-[5vh]
+        h-[6vh]
 rounded-r-4xl rounded-l-sm
 w-[clamp(160px,50vw,240px)]
  

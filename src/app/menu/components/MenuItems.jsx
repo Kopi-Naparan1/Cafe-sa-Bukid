@@ -111,7 +111,7 @@ export default function MenuItems() {
             ))}
           </div>
         </div>
-        <div className="md:hidden max-w-content mx-auto px-6 pb-4 flex justify-end">
+        <div className="md:hidden max-w-content mx-auto px-6 pb-4 flex justify-center">
           <button
             type="button"
             onClick={toggleAllVisibleItems}

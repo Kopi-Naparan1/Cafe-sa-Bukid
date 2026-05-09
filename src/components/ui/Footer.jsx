@@ -25,7 +25,7 @@ export default function Footer() {
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="md:inline-flex hidden  items-center gap-1.5 text-xs font-medium text-background/60 border border-primary/20 rounded-md px-2.5 py-1.5 hover:bg-accent/50 transition"
+            className="md:inline-flex hidden  items-center gap-1.5 text-xs font-medium text-background/60 border border-background/10 rounded-md px-2.5 py-1.5 hover:bg-accent/50 transition"
           >
             Message us
           </a>
@@ -36,12 +36,12 @@ export default function Footer() {
           <p className="text-[10px] uppercase tracking-widest text-background/60 mb-3">
             Pages
           </p>
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-4">
             {links.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-[13px] text-background/60 hover:text-background transition"
+                  className="text-[13px] text-background/60 hover:text-background border border-background/10 rounded-md px-2.5 py-1.5 hover:bg-accent/50 transition"
                 >
                   {item.label}
                 </Link>
@@ -72,7 +72,7 @@ export default function Footer() {
             href="https://www.google.com/maps/dir/?api=1&destination=8.05238,124.9021849"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 text-[13px] font-medium text-background/90 bg-primary/10 border border-primary/25 rounded-md px-3 py-1.5 hover:bg-accent/50 transition"
+            className="hidden md:inline-flex items-center gap-1.5 text-[13px] font-medium text-background/90 bg-primary/10 border border-background/10 rounded-md px-3 py-1.5 hover:bg-accent/50 transition"
           >
             Get directions
           </a>
