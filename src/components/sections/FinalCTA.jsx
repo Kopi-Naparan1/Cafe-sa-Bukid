@@ -31,7 +31,7 @@ export default function FinalCTA() {
               md:px-12
             "
         >
-          Get Directions →
+          Get Directions
         </Link>
         <Link
           href="/contact"

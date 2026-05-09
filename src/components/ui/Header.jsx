@@ -96,7 +96,7 @@ export default function Header() {
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="cursor-pointer rounded-full p-2 ring-2 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-dark/70 transition-all duration-150 hover:bg-dark/5 hover:ring-dark/50 focus-visible:outline-none focus-visible:ring-primary md:hidden"
+          className="cursor-pointer rounded-full p-2 ring-2 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] ring-background/70 transition-all duration-150 hover:bg-dark/5 hover:ring-background/50 focus-visible:outline-none focus-visible:ring-primary md:hidden"
         >
           {isOpen ? (
             <X size={18} strokeWidth={2.5} />

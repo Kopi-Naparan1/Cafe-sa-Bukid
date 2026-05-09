@@ -44,10 +44,44 @@ export default function Location() {
   w-[clamp(160px,60vw,240px)]
   md:w-auto md:max-w-[30vw]
   max-w-full
+  hidden
+  md:flex
 
   py-2.5
   px-2
-  flex items-center justify-center
+  items-center justify-center
+
+  text-center
+  text-[clamp(.9rem,1.5vw,1.1rem)]
+  font-medium text-background
+  bg-accent
+  shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
+  transition-all duration-150
+
+  hover:bg-accent/80 hover:-translate-y-px
+  md:hover:bg-accent/80 md:hover:translate-y-0 md:hover:-translate-x-px
+
+  md:mt-6 md:px-10
+"
+        >
+          ⟵ Open in Google Maps
+        </a>
+        <a
+          href="https://www.google.com/maps/place/Cafe+sa+Bukid"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+  rounded-full md:rounded-none md:rounded-l-4xl md:rounded-r-sm
+
+  w-[clamp(160px,60vw,240px)]
+  md:w-auto md:max-w-[30vw]
+  max-w-full
+  flex
+  md:hidden
+
+  py-2.5
+  px-2
+  items-center justify-center
 
   text-center
   text-[clamp(.9rem,1.5vw,1.1rem)]

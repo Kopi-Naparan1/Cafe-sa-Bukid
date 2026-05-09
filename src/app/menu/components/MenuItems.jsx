@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import useMenuData from "./data/menuData";
 import mockImage from "../../assets/best-sellers/italian-spaghetti.avif";
@@ -19,14 +19,38 @@ export default function MenuItems() {
     menuItemsCategories[0].id,
   );
 
-  const [activeItem, setActiveItem] = useState(null);
+  const [openItemIds, setOpenItemIds] = useState([]);
 
   function toggleItem(itemId) {
-    setActiveItem((prev) => (prev === itemId ? null : itemId));
+    setOpenItemIds((prev) =>
+      prev.includes(itemId)
+        ? prev.filter((openItemId) => openItemId !== itemId)
+        : [...prev, itemId],
+    );
   }
 
   const menuData = useMenuData();
   let currentCategoryData = menuData[activeCategory].data;
+  const visibleItemIds = currentCategoryData.flatMap((section) =>
+    section.items.map((item) => item.id),
+  );
+  const areAllVisibleItemsOpen =
+    visibleItemIds.length > 0 &&
+    visibleItemIds.every((itemId) => openItemIds.includes(itemId));
+
+  function toggleAllVisibleItems() {
+    setOpenItemIds((prev) => {
+      if (visibleItemIds.every((itemId) => prev.includes(itemId))) {
+        return prev.filter((itemId) => !visibleItemIds.includes(itemId));
+      }
+
+      return [...new Set([...prev, ...visibleItemIds])];
+    });
+  }
+
+  useEffect(() => {
+    setOpenItemIds([]);
+  }, [activeCategory]);
 
   return (
     <div className="min-h-[90vh] bg-secondary-light/30 w-full rounded-2xl overflow-hidden ">
@@ -87,6 +111,15 @@ export default function MenuItems() {
             ))}
           </div>
         </div>
+        <div className="md:hidden max-w-content mx-auto px-6 pb-4 flex justify-end">
+          <button
+            type="button"
+            onClick={toggleAllVisibleItems}
+            className="rounded-full border border-primary/15 bg-background/75 px-4 py-2 text-sm font-medium text-dark/75 shadow-sm transition-all duration-150 active:scale-[0.98]"
+          >
+            {areAllVisibleItemsOpen ? "Hide all images" : "View all images"}
+          </button>
+        </div>
       </div>
 
       {/* DESKTOP */}
@@ -138,7 +171,7 @@ export default function MenuItems() {
 
               <div className="pl-1 grid grid-cols-1 gap-2  ">
                 {section.items.map((item) => {
-                  const isOpen = activeItem === item.id;
+                  const isOpen = openItemIds.includes(item.id);
 
                   return (
                     <div

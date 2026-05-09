@@ -109,7 +109,7 @@ export default function AboutPreview() {
           md:px-10
         "
       >
-        Discover Our Story
+        Discover Our Story →
       </Link>
     </Section>
   );
