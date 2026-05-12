@@ -15,7 +15,7 @@ export default function MobileVisitInformation({ items }) {
             shadow-sm
           "
         >
-          <div className="relative h-45">
+          {/* <div className="relative h-45">
             <Image
               src={item.image}
               alt={item.title}
@@ -23,7 +23,7 @@ export default function MobileVisitInformation({ items }) {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-linear-to-t from-dark/60 via-dark/10 to-transparent" />
-          </div>
+          </div> */}
 
           <div className="p-5 flex flex-col flex-1">
             <h3 className="font-semibold text-lg mb-3">{item.title}</h3>

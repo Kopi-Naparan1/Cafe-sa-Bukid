@@ -139,11 +139,15 @@ export default function MenuItems() {
                     key={item.id}
                     className="bg-background/60 flex flex-col p-4 rounded-lg shadow-sm"
                   >
-                    <Image
-                      src={mockImage}
-                      alt={item.name}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
-                    />
+                    <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        loading="lazy"
+                        className="object-cover"
+                      />
+                    </div>
 
                     <h3 className="text-md font-bold mb-2">{item.name}</h3>
 
@@ -179,7 +183,7 @@ export default function MenuItems() {
                       key={item.id}
                       className="bg-background/60 relative flex flex-row items-center p-2 rounded-lg shadow-sm"
                     >
-                      <div>
+                      <div className="w-full">
                         <div
                           className={`
     overflow-hidden
@@ -187,11 +191,15 @@ export default function MenuItems() {
     ${isOpen ? "max-h-[30vh] opacity-100 mb-4" : "max-h-0 opacity-0"}
   `}
                         >
-                          <Image
-                            src={mockImage}
-                            alt={item.name}
-                            className="w-[95%] h-[clamp(8rem,30vw,15rem)]   rounded-lg object-cover"
-                          />
+                          <div className="relative w-[75%] h-[clamp(8rem,30vw,15rem)] rounded-lg overflow-hidden mb-4">
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              loading="lazy"
+                              className="object-cover"
+                            />
+                          </div>
                         </div>
                         <h3 className="text-md font-bold mb-2">{item.name}</h3>
 

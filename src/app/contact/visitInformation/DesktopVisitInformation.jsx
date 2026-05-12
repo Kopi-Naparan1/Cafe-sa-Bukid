@@ -16,14 +16,14 @@ export default function DesktopWhyChooseUs({ items }) {
             transition-all duration-200
           "
         >
-          <div className="relative h-55">
+          {/* <div className="relative h-55">
             <Image
               src={item.image}
               alt={item.title}
               fill
               className="object-cover"
             />
-          </div>
+          </div> */}
 
           <div className="p-6 flex flex-col  ">
             <h3 className="font-semibold text-lg mb-3">{item.title}</h3>

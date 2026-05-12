@@ -34,7 +34,7 @@ const items = [
 
 export default function VisitInformation() {
   return (
-    <Section className="min-h-[90vh] flex flex-col items-center text-center gap-6">
+    <Section className="min-h-[50vh] flex flex-col items-center text-center gap-6">
       {/* EYEBROW */}
       <span className="text-xs font-medium uppercase tracking-[.16em] text-primary/60">
         Visit Information

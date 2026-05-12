@@ -1,13 +1,16 @@
 import Section from "../ui/Section";
 import Link from "next/link";
 import Image from "next/image";
-import mockImage from "../../app/assets/best-sellers/italian-spaghetti.avif";
+import Drinks from "../menu-preview-pics/drinks.jpg";
+import lightBites from "../menu-preview-pics/light-bites.jpg";
+import Meals from "../menu-preview-pics/meals.jpg";
+import Specials from "../menu-preview-pics/specials.jpg";
 
 const menuItems = [
-  { id: 1, label: "Meals", image: mockImage },
-  { id: 2, label: "Coffee", image: mockImage },
-  { id: 3, label: "Dessert", image: mockImage },
-  { id: 4, label: "Pastry", image: mockImage },
+  { id: 1, label: "Drinks", image: Drinks },
+  { id: 2, label: "Meals", image: lightBites },
+  { id: 3, label: "Light Bites", image: Meals },
+  { id: 4, label: "Special", image: Specials },
 ];
 
 export default function MenuPreview() {

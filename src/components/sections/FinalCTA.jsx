@@ -12,14 +12,14 @@ export default function FinalCTA() {
       <p
         className="
 
-  max-w-md text-left leading-relaxed
+  max-w-md text-center leading-relaxed
   text-[clamp(.9rem,1.5vw,1rem)]
   text-dark/65
 "
       >
         Fresh food, fresh air, worth the trip
       </p>
-      <div className="flex flex-col md:flex-row  gap-4 mt-12 min-w-[60vw] justify-center">
+      <div className="flex flex-col md:flex-row  gap-4 mt-12 min-w-[70vw] justify-center">
         {" "}
         <Link
           href="/menu"
