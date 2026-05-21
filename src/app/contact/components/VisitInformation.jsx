@@ -25,8 +25,8 @@ const items = [
   {
     id: 3,
     title: "Contact Options",
-    description1: `+63 XXX XXX XXXX (Globe)
-    +63 XXX XXX XXXX (Smart)`,
+    description1: `+63 930 400 9175 (Globe)
+    _`,
     description2: "Or reach us on Facebook Messenger for the fastest response.",
     image: mockImage,
   },

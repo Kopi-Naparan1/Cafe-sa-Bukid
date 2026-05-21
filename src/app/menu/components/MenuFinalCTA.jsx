@@ -31,19 +31,21 @@ export default function MenuFinalCTA() {
               md:px-12
             "
         >
-          Visit Us Today
+          Open in Google Maps
         </Link>
-        <Link
-          href="/contact"
+        <a
+          href="https://www.facebook.com/CafesaBukid"
+          target="_blank"
+          rel="noopener noreferrer"
           className="   text-center items-center justify-center
-              rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
-              text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
-              transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px
-              md:px-12
-            "
+         rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
+         text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
+         transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px
+         md:px-12
+       "
         >
-          Find Our Location
-        </Link>
+          Message us on Facebook
+        </a>
       </div>
     </Section>
   );

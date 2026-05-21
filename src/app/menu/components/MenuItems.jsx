@@ -1,8 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import useMenuData from "./data/menuData";
-import mockImage from "../../assets/best-sellers/italian-spaghetti.avif";
 import { ChevronDown } from "lucide-react";
 
 const menuItemsCategories = [
@@ -11,8 +10,6 @@ const menuItemsCategories = [
   { id: 2, name: "Light Bites" },
   { id: 3, name: "Specials" },
 ];
-
-function chevronDown() {}
 
 export default function MenuItems() {
   const [activeCategory, setActiveCategory] = useState(
@@ -48,10 +45,6 @@ export default function MenuItems() {
     });
   }
 
-  useEffect(() => {
-    setOpenItemIds([]);
-  }, [activeCategory]);
-
   return (
     <div className="min-h-[90vh] bg-secondary-light/30 w-full rounded-2xl overflow-hidden ">
       {/* CATEGORY NAV */}
@@ -84,7 +77,10 @@ export default function MenuItems() {
             {menuItemsCategories.map((category) => (
               <button
                 key={category.name}
-                onClick={() => setActiveCategory(category.id)}
+                onClick={() => {
+                  setActiveCategory(category.id);
+                  setOpenItemIds([]);
+                }}
                 className={`
         px-[clamp(0.75rem,3vw,1.2rem)]
         py-[clamp(0.45rem,2vw,0.7rem)]

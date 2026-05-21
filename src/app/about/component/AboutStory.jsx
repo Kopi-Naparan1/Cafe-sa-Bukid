@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import Section from "../../../components/ui/Section";
-import HeroImage from "../../assets/hero-image.webp";
 
 export default function AboutStory() {
   return (
@@ -20,9 +19,9 @@ export default function AboutStory() {
         {/* MOBILE IMAGE */}
         <div className="relative w-full overflow-hidden rounded-2xl aspect-4/3 ring-2 my-4 ring-primary/20 shadow-sm md:hidden">
           <Image
-            src={HeroImage}
-            alt="Cafe sa Bukid Hero Section"
             fill
+            alt="Cafe sa Bukid Staff"
+            src="/images/newImages/staffs.jpg"
             priority
             sizes="(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 45vw"
             className="object-cover"
@@ -87,8 +86,8 @@ export default function AboutStory() {
       {/* DESKTOP IMAGE — 40% */}
       <div className="hidden md:col-span-2 md:block relative w-full overflow-hidden rounded-2xl aspect-4/3 ring-2 ring-primary/20 shadow-sm">
         <Image
-          src={HeroImage}
-          alt="Cafe sa Bukid Hero Section"
+          alt="Cafe sa Bukid Staff"
+          src="/images/newImages/staffs.jpg"
           fill
           priority
           sizes="(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 45vw"

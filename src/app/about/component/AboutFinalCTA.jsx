@@ -34,8 +34,9 @@ export default function AboutFinalCTA() {
         >
           View Menu
         </Link>
+        {/* Replace # with your real Google Maps directions URL. */}
         <Link
-          href="/contact"
+          href="#"
           className="   text-center items-center justify-center
               rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
@@ -43,7 +44,7 @@ export default function AboutFinalCTA() {
               md:px-12
             "
         >
-          Get Directions
+          Open in Google Maps
         </Link>
       </div>
     </Section>

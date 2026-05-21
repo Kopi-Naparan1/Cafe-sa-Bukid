@@ -22,8 +22,9 @@ export default function ContactFinalCTA() {
       </p>
       <div className="flex flex-col md:flex-row  gap-4 mt-12 min-w-[60vw] justify-center">
         {" "}
+        {/* Replace # with your real Google Maps directions URL. */}
         <Link
-          href="/menu"
+          href="#"
           className="
               rounded-full bg-accent  py-3 flex flex-1 md:flex-none items-center justify-center
               text-center
@@ -32,10 +33,13 @@ export default function ContactFinalCTA() {
               md:px-12
             "
         >
-          Get Directions →
+          Open in Google Maps
         </Link>
-        <Link
-          href="/contact"
+        {/* Replace this if you want a different Facebook or Messenger destination later. */}
+        <a
+          href="https://www.facebook.com/CafesaBukid"
+          target="_blank"
+          rel="noopener noreferrer"
           className="   text-center items-center justify-center
               rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
@@ -44,7 +48,7 @@ export default function ContactFinalCTA() {
             "
         >
           Message us on Facebook
-        </Link>
+        </a>
       </div>
     </Section>
   );

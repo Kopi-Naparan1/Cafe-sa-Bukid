@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -14,23 +14,20 @@ const navItems = [
 ];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openPathname, setOpenPathname] = useState(null);
   const pathname = usePathname();
-
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  // Close menu on Escape key
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === "Escape") setIsOpen(false);
-  }, []);
+  const isOpen = openPathname === pathname;
 
   useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === "Escape") {
+        setOpenPathname(null);
+      }
+    }
+
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [handleKeyDown]);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -92,7 +89,9 @@ export default function Header() {
 
         {/* Mobile menu toggle */}
         <button
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() =>
+            setOpenPathname((prev) => (prev === pathname ? null : pathname))
+          }
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -125,7 +124,7 @@ export default function Header() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setOpenPathname(null)}
                     aria-current={isActive ? "page" : undefined}
                     className={`flex items-center rounded-xl border-2 px-4 py-2.5 text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive

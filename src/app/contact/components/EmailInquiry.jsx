@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Section from "../../../components/ui/Section";
 
 const inquiryHighlights = [
@@ -22,6 +25,61 @@ const inquiryHighlights = [
 ];
 
 export default function EmailInquiry() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to send email inquiry.");
+      }
+
+      setSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to send email inquiry.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  }
   return (
     <Section
       className="
@@ -32,6 +90,7 @@ export default function EmailInquiry() {
         bg-secondary-light/30
         px-4
         py-8
+        
         md:grid
         md:grid-cols-5
         md:items-center
@@ -72,14 +131,17 @@ export default function EmailInquiry() {
 
       <div className="mt-8 md:col-span-3 md:mt-0 ">
         <div className="rounded-2xl bg-secondary-dark/55 p-4 shadow-[0_18px_45px_-25px_rgba(0,0,0,0.45)] sm:p-5 md:p-7">
-          <form className="flex flex-col gap-4">
-            {/* Connect the form action or submit handler to your email provider / backend here. */}
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div className="grid gap-4 md:grid-cols-2">
               <label className="flex min-w-0 flex-col gap-1.5 text-[.82rem] font-medium text-background/75 sm:gap-2 sm:text-sm">
                 Name
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  autoComplete="name"
                   placeholder="Your full name"
                   className="
                     w-full max-w-full min-w-0 box-border
@@ -96,6 +158,10 @@ export default function EmailInquiry() {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  autoComplete="email"
                   placeholder="you@example.com"
                   className="
                     w-full max-w-full min-w-0 box-border
@@ -113,6 +179,9 @@ export default function EmailInquiry() {
               <input
                 type="text"
                 name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
                 placeholder="What do you need help with?"
                 className="
                   w-full max-w-full min-w-0 box-border
@@ -128,6 +197,9 @@ export default function EmailInquiry() {
               Message
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 rows="6"
                 placeholder="Share your question, preferred date, group size, or any details we should know."
                 className="
@@ -148,18 +220,31 @@ export default function EmailInquiry() {
 
               <button
                 type="submit"
+                disabled={loading}
                 className="
                   rounded-full bg-accent px-6 py-3 text-sm font-medium text-background
                   transition-all duration-150 hover:bg-accent/80 hover:-translate-y-px
+                  disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:bg-accent
                   md:px-10 md:text-base md:hover:translate-y-0 md:hover:-translate-x-px
                   md:rounded-l-4xl md:rounded-r-sm
                 "
               >
-                Send Email Inquiry
+                {loading ? "Sending..." : "Send Email Inquiry"}
               </button>
             </div>
 
-            {/* Add success and error feedback UI here once real email sending is set up. */}
+            {error ? (
+              <p className="rounded-2xl border border-red-300/30 bg-red-950/20 px-4 py-3 text-sm text-red-100">
+                {error}
+              </p>
+            ) : null}
+
+            {success ? (
+              <p className="rounded-2xl border border-emerald-300/30 bg-emerald-950/20 px-4 py-3 text-sm text-emerald-100">
+                Your inquiry was sent successfully. We&apos;ll get back to you
+                soon.
+              </p>
+            ) : null}
           </form>
         </div>
       </div>

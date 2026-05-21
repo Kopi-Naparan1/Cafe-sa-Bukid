@@ -87,7 +87,7 @@ export default function Hero() {
       <div
         className=" 
 
-        relative md:w-[40vw] w-[clamp(280px,80vw,520px)] mx-auto overflow-hidden rounded-2xl
+        relative w-full max-w-[clamp(280px,80vw,520px)] md:max-w-none mx-auto overflow-hidden rounded-2xl
         aspect-4/3 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)]
       
         md:aspect-auto md:self-stretch md:rounded-3xl
@@ -97,7 +97,7 @@ export default function Hero() {
         <Image
           fill
           priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 40vw"
+          sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 100vw"
           className="object-cover"
           alt="Cafe sa Bukid Hero Section"
           src={HeroImage}

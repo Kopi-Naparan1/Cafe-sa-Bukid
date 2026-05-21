@@ -29,8 +29,8 @@ export default function Gallery() {
         {/* TOP BIG IMAGE */}
         <div className="relative w-full aspect-[2/1.1] overflow-hidden rounded-t-3xl ring-1 ring-secondary/90">
           <Image
-            src={mockImage}
-            alt="Top Image"
+            alt="top"
+            src="/images/newImages/gallery1.jpg"
             fill
             className="object-cover"
           />
@@ -41,7 +41,7 @@ export default function Gallery() {
           {/* BOTTOM LEFT */}
           <div className="relative aspect-square overflow-hidden rounded-bl-3xl ring-1 ring-secondary/90">
             <Image
-              src={mockImage}
+              src="/images/newImages/gallery2.jpg"
               alt="Bottom Left"
               fill
               className="object-cover"
@@ -51,8 +51,8 @@ export default function Gallery() {
           {/* BOTTOM RIGHT */}
           <div className="relative aspect-square overflow-hidden rounded-br-3xl ring-1 ring-secondary/90">
             <Image
-              src={mockImage}
-              alt="Bottom Right"
+              src="/images/newImages/gallery3.jpg"
+              alt="Bottom Right image"
               fill
               className="object-cover"
             />
@@ -81,8 +81,11 @@ export default function Gallery() {
           From sunrise coffee to sunset dinners.
         </p>
 
-        <Link
-          href="/menu"
+        {/* Replace this if you want a different Facebook or Messenger destination later. */}
+        <a
+          href="https://www.facebook.com/CafesaBukid"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
     rounded-full
 
@@ -117,7 +120,7 @@ export default function Gallery() {
   "
         >
           Message us on Facebook
-        </Link>
+        </a>
       </div>
     </Section>
   );

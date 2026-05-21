@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import Section from "../ui/Section";
 import Image from "next/image";
-import HeroImage from "../../app/assets/hero-image.webp";
 import AboutStrip from "../ui/AboutPreview/AboutStrip";
 export default function AboutPreview() {
   return (
@@ -79,8 +78,8 @@ export default function AboutPreview() {
           priority
           sizes="(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 45vw"
           className="object-cover  "
-          alt="Cafe sa Bukid Hero Section"
-          src={HeroImage}
+          alt="Cafe sa Bukid Staff"
+          src="/images/newImages/staffs.jpg"
         />
 
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-dark/45 via-dark/10 to-transparent" />

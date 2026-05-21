@@ -22,7 +22,6 @@ export default function Location() {
           Find us in the heart of Bukidnon
         </h2>
 
-        {/* Desktop version (full) */}
         <p
           className="
   hidden md:block
@@ -64,7 +63,7 @@ export default function Location() {
   md:mt-6 md:px-10
 "
         >
-          ⟵ Open in Google Maps
+          Open in Google Maps
         </a>
         <a
           href="https://www.google.com/maps/place/Cafe+sa+Bukid"

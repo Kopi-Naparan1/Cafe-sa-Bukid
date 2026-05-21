@@ -10,21 +10,21 @@ const features = [
     title: "Fresh Ingredients",
     description:
       "Every meal is prepared with fresh, locally sourced ingredients that bring out simple and honest flavors.",
-    image: mockImage,
+    image: "/images/newImages/fresh.jpg",
   },
   {
     id: 2,
     title: "Scenic Mountain Views",
     description:
       "Surrounded by Bukidnon’s natural beauty, every visit feels peaceful, refreshing, and worth the trip.",
-    image: mockImage,
+    image: "/images/newImages/scenic.jpg",
   },
   {
     id: 3,
-    title: "Warm & Relaxed Atmosphere",
+    title: "Relaxed Atmosphere",
     description:
       "Built for slow mornings, family meals, and meaningful conversations—not rushed dining.",
-    image: mockImage,
+    image: "/images/newImages/relaxed.jpg",
   },
 ];
 

@@ -42,7 +42,7 @@ export default function MenuPreview() {
         </>
 
         <Link
-          href="/about"
+          href="/menu"
           className="
           rounded-r-4xl rounded-l-sm
           w-[clamp(160px,50vw,240px)] md:w-auto md:max-w-[25vw]
@@ -89,7 +89,7 @@ export default function MenuPreview() {
       </div>
 
       <Link
-        href="/about"
+        href="/menu"
         className="
         h-[6vh]
 rounded-r-4xl rounded-l-sm
