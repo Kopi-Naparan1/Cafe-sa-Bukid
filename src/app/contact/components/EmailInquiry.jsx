@@ -227,6 +227,7 @@ export default function EmailInquiry() {
                   disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:bg-accent
                   md:px-10 md:text-base md:hover:translate-y-0 md:hover:-translate-x-px
                   md:rounded-l-4xl md:rounded-r-sm
+                  shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
                 "
               >
                 {loading ? "Sending..." : "Send Email Inquiry"}

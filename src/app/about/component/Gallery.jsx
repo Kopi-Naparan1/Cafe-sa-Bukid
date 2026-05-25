@@ -87,6 +87,7 @@ export default function Gallery() {
           target="_blank"
           rel="noopener noreferrer"
           className="
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
     rounded-full
 
     w-full

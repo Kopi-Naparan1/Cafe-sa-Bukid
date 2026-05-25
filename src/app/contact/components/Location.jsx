@@ -39,6 +39,7 @@ export default function Location() {
           target="_blank"
           rel="noopener noreferrer"
           className="
+          shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
   rounded-full md:rounded-none md:rounded-l-4xl md:rounded-r-sm
 
   w-[clamp(160px,50vw,240px)]

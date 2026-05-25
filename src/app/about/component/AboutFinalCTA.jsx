@@ -30,6 +30,7 @@ export default function AboutFinalCTA() {
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium text-background
               transition-all duration-150 hover:bg-accent/80 hover:-translate-y-px
               md:px-12
+              shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
             "
         >
           View Menu
@@ -37,7 +38,7 @@ export default function AboutFinalCTA() {
         {/* Replace # with your real Google Maps directions URL. */}
         <Link
           href="#"
-          className="   text-center items-center justify-center
+          className="    shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]  text-center items-center justify-center
               rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
               transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px

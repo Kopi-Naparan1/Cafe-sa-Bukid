@@ -26,6 +26,7 @@ export default function MenuFinalCTA() {
           className="
               rounded-full bg-accent  py-3 flex flex-1 md:flex-none items-center justify-center
               text-center
+              shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium text-background
               transition-all duration-150 hover:bg-accent/80 hover:-translate-y-px
               md:px-12
@@ -37,7 +38,7 @@ export default function MenuFinalCTA() {
           href="https://www.facebook.com/CafesaBukid"
           target="_blank"
           rel="noopener noreferrer"
-          className="   text-center items-center justify-center
+          className="     shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] text-center items-center justify-center
          rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
          text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
          transition-all duration-150 hover:bg-primary/5 hover:-translate-y-px

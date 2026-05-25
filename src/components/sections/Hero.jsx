@@ -24,7 +24,7 @@ export default function Hero() {
           text-primary/60 md:mb-4
         "
         >
-          Since 2002
+          Since 2017
         </span>
 
         <h1

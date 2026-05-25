@@ -85,6 +85,7 @@ export default function MenuItems() {
         px-[clamp(0.75rem,3vw,1.2rem)]
         py-[clamp(0.45rem,2vw,0.7rem)]
         md:px-5 md:py-2
+        shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
 
         text-[clamp(0.8rem,2.8vw,0.95rem)]
         font-medium
@@ -111,7 +112,7 @@ export default function MenuItems() {
           <button
             type="button"
             onClick={toggleAllVisibleItems}
-            className="rounded-full border border-primary/15 bg-background/75 px-4 py-2 text-sm font-medium text-dark/75 shadow-sm transition-all duration-150 active:scale-[0.98]"
+            className={`rounded-full border border-primary/15 px-4 py-2 text-sm font-medium    shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] text-dark/75   transition-all duration-150 active:scale-[0.98] ${areAllVisibleItemsOpen ? "bg-background/50" : "bg-background/75"}`}
           >
             {areAllVisibleItemsOpen ? "Hide all images" : "View all images"}
           </button>

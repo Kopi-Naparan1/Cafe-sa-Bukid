@@ -77,6 +77,7 @@ export default function AboutStory() {
 
     md:rounded-r-4xl md:rounded-l-sm
     md:px-10
+    shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
   "
         >
           View Our Menu
@@ -84,7 +85,7 @@ export default function AboutStory() {
       </div>
 
       {/* DESKTOP IMAGE — 40% */}
-      <div className="hidden md:col-span-2 md:block relative w-full overflow-hidden rounded-2xl aspect-4/3 ring-2 ring-primary/20 shadow-sm">
+      <div className="hidden md:col-span-2 md:block relative w-full overflow-hidden rounded-2xl aspect-4/3 ring-2  ring-primary/20 shadow-sm">
         <Image
           alt="Cafe sa Bukid Staff"
           src="/images/newImages/staffs.jpg"
