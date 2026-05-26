@@ -44,7 +44,7 @@ export async function POST(req) {
 
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "cafesabukid@gmail.com",
+      to: "kopinaparan13@gmail.com",
       subject: `Cafe Inquiry: ${subject.trim()}`,
       replyTo: email.trim(),
       html: `
