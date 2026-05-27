@@ -4,7 +4,7 @@ import Footer from "@/components/ui/Footer";
 
 // Metadata (title, description, etc.)
 export const metadata = {
-  title: "Cafe sa Bukidnon",
+  title: "Café sa Bukid",
   description:
     "A cafe located in Malaybalay, Bukidnon, Philippines, offering a cozy atmosphere and delicious coffee made from locally sourced beans.",
 };
