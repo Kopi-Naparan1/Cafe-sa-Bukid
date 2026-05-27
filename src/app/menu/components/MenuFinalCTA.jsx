@@ -1,4 +1,6 @@
 import Section from "../../../components/ui/Section";
+import { cafeSaBukidGoogleMapsUrl } from "../../../lib/location";
+
 import Link from "next/link";
 export default function MenuFinalCTA() {
   return (
