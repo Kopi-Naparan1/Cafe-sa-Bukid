@@ -1,4 +1,5 @@
 import Section from "../../../components/ui/Section";
+import { cafeSaBukidGoogleMapsUrl } from "../../../lib/location";
 
 export default function Location() {
   return (
@@ -35,7 +36,7 @@ export default function Location() {
         </p>
 
         <a
-          href="https://www.google.com/maps/place/Cafe+sa+Bukid"
+          href={cafeSaBukidGoogleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="

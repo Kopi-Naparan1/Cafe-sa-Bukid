@@ -1,5 +1,6 @@
 import Section from "../../../components/ui/Section";
 import Link from "next/link";
+import { cafeSaBukidGoogleMapsUrl } from "../../../lib/location";
 
 export default function AboutFinalCTA() {
   return (
@@ -35,9 +36,10 @@ export default function AboutFinalCTA() {
         >
           View Menu
         </Link>
-        {/* Replace # with your real Google Maps directions URL. */}
-        <Link
-          href="#"
+        <a
+          href={cafeSaBukidGoogleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="    shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]  text-center items-center justify-center
               rounded-full border-2 border-primary flex flex-1 md:flex-none py-3
               text-[clamp(.9rem,1.5vw,1.1rem)] font-medium
@@ -46,7 +48,7 @@ export default function AboutFinalCTA() {
             "
         >
           Open in Google Maps
-        </Link>
+        </a>
       </div>
     </Section>
   );

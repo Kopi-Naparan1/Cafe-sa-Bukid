@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cafeSaBukidGoogleMapsUrl } from "../../lib/location";
 
 const links = [
   { href: "/", label: "Home" },
@@ -70,7 +71,7 @@ export default function Footer() {
           </p>
 
           <a
-            href="https://www.google.com/maps/dir/?api=1&destination=8.05238,124.9021849"
+            href={cafeSaBukidGoogleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-1.5 text-[13px] font-medium text-background/90 bg-primary/10 border border-background/10 rounded-md px-3 py-1.5 hover:bg-accent/50 transition"

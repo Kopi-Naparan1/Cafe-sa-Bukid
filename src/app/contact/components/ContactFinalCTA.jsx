@@ -1,5 +1,5 @@
 import Section from "../../../components/ui/Section";
-import Link from "next/link";
+import { cafeSaBukidGoogleMapsUrl } from "../../../lib/location";
 
 export default function ContactFinalCTA() {
   return (
@@ -21,10 +21,10 @@ export default function ContactFinalCTA() {
         Fresh food, fresh air, worth the trip
       </p>
       <div className="flex flex-col md:flex-row  gap-4 mt-12 min-w-[60vw] justify-center">
-        {" "}
-        {/* Replace # with your real Google Maps directions URL. */}
-        <Link
-          href="#"
+        <a
+          href={cafeSaBukidGoogleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="
           shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
               rounded-full bg-accent  py-3 flex flex-1 md:flex-none items-center justify-center
@@ -35,7 +35,7 @@ export default function ContactFinalCTA() {
             "
         >
           Open in Google Maps
-        </Link>
+        </a>
         {/* Replace this if you want a different Facebook or Messenger destination later. */}
         <a
           href="https://www.facebook.com/CafesaBukid"
