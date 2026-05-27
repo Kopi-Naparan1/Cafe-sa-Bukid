@@ -6,6 +6,9 @@ import MenuPreview from "@/components/sections/MenuPreview";
 
 import Location from "@/components/sections/Location";
 import FinalCTA from "@/components/sections/FinalCTA";
+import { metadataForRoute } from "@/lib/seo";
+
+export const metadata = metadataForRoute("/");
 
 export default function Home() {
   return (
